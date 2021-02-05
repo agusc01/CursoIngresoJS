@@ -1,4 +1,5 @@
-function mostrar()
-{
-	alert("ok");
+function mostrar() {
+	for (var i = 1; i <= 10; i++) {
+		alert("ciclo: " + i)		
+	}
 }

@@ -1,8 +1,7 @@
 var miIntervalo ;
 var contador=0;
 
-function inicio()
-{
+function inicio() {
 	alert("function inicio.");
 	miIntervalo = setInterval(SegundosEnElAire, 2000);
 	
@@ -15,8 +14,7 @@ function SegundosEnElAire() {
     
 }//FIN DE LA FUNCIÓN SegundosEnElAire
 
-function fin()
-{
+function fin() {
 	alert("function fin.");
 	clearInterval(miIntervalo);
 

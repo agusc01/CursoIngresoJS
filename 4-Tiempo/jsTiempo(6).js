@@ -1,8 +1,7 @@
 var miTemporizador ;
 var contador=0;
 
-function inicio()
-{
+function inicio() {
 	document.getElementById("secreto").style.visibility="hidden";
 	alert("function inicio.");
 	miTemporizador = setTimeout(SegundosEnElAire, 3000);
@@ -16,9 +15,9 @@ function SegundosEnElAire() {
    
 }//FIN DE LA FUNCIÓN SegundosEnElAire
 
-function fin()
-{
+// La función fin() es innecesaría, porque se utiliza cuando esta setInterval, no se utiliza cuando usas setTimeout
+/* function fin() {
 	alert("function fin.");
 	clearTimeout(miIntervalo);
 
-}//FIN DE LA FUNCIÓN fin
+}//FIN DE LA FUNCIÓN fin */

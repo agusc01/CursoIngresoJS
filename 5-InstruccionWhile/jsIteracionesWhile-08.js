@@ -12,6 +12,20 @@ function mostrar()
 	multiplicacionNegativos=1;
 	respuesta='si';
 
+	while(respuesta == 'si') {
+		var numero = parseInt(prompt(contador + "- ingrese un número: "));
+
+		// números positivos
+		if(numero > 0) {
+			sumaPositivos = sumaPositivos + numero
+		} else { // números negativos
+			multiplicacionNegativos = multiplicacionNegativos * numero;
+		}
+
+		respuesta = prompt("Si quiere seguir tipiar 'si'");
+		contador++;
+
+	}
 
 	txtIdSuma.value=sumaPositivos;
 	txtIdProducto.value=multiplicacionNegativos;

@@ -1,7 +1,6 @@
 var miIntervalo ;
 
-function inicio()
-{	
+function inicio() {	
 	alert("function inicio.");
 	miIntervalo = setInterval(SegundosEnElAire, 3000);
 	
@@ -9,7 +8,7 @@ function inicio()
 
 function SegundosEnElAire() {
 
-    alert("Bienvenido a la UTN FRA");
+  alert("Bienvenido a la UTN FRA");
 
 }//FIN DE LA FUNCIÓN SegundosEnElAire
 
