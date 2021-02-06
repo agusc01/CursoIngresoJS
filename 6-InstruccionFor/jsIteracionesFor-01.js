@@ -1,5 +1,7 @@
-function mostrar() {
-	for (var i = 1; i <= 10; i++) {
-		alert("ciclo: " + i)		
+function mostrar()
+{
+	for(var i=1;i<11;i++)
+	{
+		alert("ciclo: " + i);
 	}
 }

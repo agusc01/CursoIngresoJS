@@ -1,8 +1,11 @@
 function mostrar() {
 	//tomo la hora
-	var horaDelDia = parseInt(txtIdHora.value);
+	var horaDelDia;
+	horaDelDia=document.getElementById('txtIdHora').value;
+	horaDelDia=parseInt(horaDelDia);
 	
-	switch(horaDelDia){
+	switch(horaDelDia)
+	{
 		case 1:
 			break;
 		case 2:
@@ -41,6 +44,6 @@ function mostrar() {
 			break;
 		default:
 			alert("La hora no existe.")
-			txtIdHora.value = "";
+			txtIdHora.value="";
 	}
 }//FIN DE LA FUNCIÓN

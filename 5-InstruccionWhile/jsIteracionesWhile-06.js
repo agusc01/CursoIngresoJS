@@ -6,17 +6,15 @@ function mostrar()
 
 	contador=1;
 	acumulador=0;
-	
 
-	while(contador <= 5) {
-
-		var numero = parseInt(prompt(contador + "- ingrese un número: "));
-		acumulador = acumulador + numero;
+	while(contador<6)
+	{
+		numeroIngresado=prompt(contador + "- ingrese un número: ");
+		numeroIngresado=parseInt(numeroIngresado);
+		acumulador=acumulador+numeroIngresado;
 		contador++;
-
 	}
 
-
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/5;
+	document.getElementById("txtIdSuma").value=acumulador;
+	document.getElementById("txtIdPromedio").value=acumulador/5;
 }//FIN DE LA FUNCIÓN

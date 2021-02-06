@@ -1,26 +1,25 @@
-function mostrar(){
+function mostrar()
+{
+	var cantidadDePares;
+	var numeroIngresado;
+	cantidadDePares=0;
 
-	var numerosPares = "";
-	var cantidadDePares = 0;
 
-
-	numeroIngresado = parseInt(prompt("Ingrese un número mayor a 1"));
-
-	for(;;){ // bucle infinito
-		if(numeroIngresado > 0) {
-			break;
-		}
-		numeroIngresado = parseInt(prompt("Incorrecto, por favor ingresa un número mayor a 1"));
-	}
-
-	for(var i=1 ; i <= numeroIngresado ; i++) {
-		if(i % 2 == 0) { // es número par
+	numeroIngresado=prompt("Ingrese un número mayor a 1");
+	numeroIngresado=parseInt(numeroIngresado);
+	
+	numeroIngresado++;
+	for(var i=1;i<numeroIngresado;i++)
+	{
+		if(i%2==0) // es número par
+		{
 			cantidadDePares++;
-			numerosPares = numerosPares + i.toString() + " "; 
+			console.log(i);
+			alert(i);
 		}
 	}
 
-	var mensaje = "La cantidad de números pares es: " + cantidadDePares + "\nLos números pares son: " + numerosPares;
+	var mensaje = "La cantidad de números pares es: " + cantidadDePares;
 
 	alert(mensaje);
 

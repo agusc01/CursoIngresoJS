@@ -1,10 +1,12 @@
-function mostrar(){
+function mostrar()
+{
 
-	for(var i=1; i > 0; i++ ){
-
+	for(var i=1;i>0;i++)
+	{
 		alert("ciclo " + i );
-		corte = parseInt(prompt("Si queres terminar ingresa un 9"));
-		if(corte == 9){
+		corte=prompt("Si queres terminar ingresa un 9");
+		corte=parseInt(corte);
+		if(corte==9){
 			break;
 		}
 	}

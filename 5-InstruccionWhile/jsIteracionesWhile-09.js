@@ -1,10 +1,8 @@
 /*
 Al presionar el botón pedir  números  hasta que el usuario quiera,
 mostrar el número máximo y el número mínimo ingresado.*/
-function mostrar() {	
-	
-	txtIdMaximo.value= "";
-	txtIdMinimo.value= "";
+function mostrar()
+{	
 	
 	// declarar variables
 	var banderaDelPrimero;
@@ -15,22 +13,31 @@ function mostrar() {
 	//iniciar variables
 	banderaDelPrimero="es el primero";
 	respuesta='si';
-	while(respuesta=="si") {
-		numeroIngresado = prompt("Ingrese un número");
+	while(respuesta=="si")
+	{
+		numeroIngresado=prompt("Ingrese un número");
+		numeroIngresado=parseInt(numeroIngresado);
 
-		if(banderaDelPrimero == "es el primero") {
-			numeroMaximo = numeroIngresado;
-			numeroMinimo = numeroIngresado;
-			banderaDelPrimero = "no es el primero"
-		} else {
-			if(numeroIngresado > numeroMaximo) {
-				numeroMaximo = numeroIngresado;
-			} else if (numeroIngresado < numeroMinimo) {
-				numeroMinimo = numeroIngresado;
+		if(banderaDelPrimero=="es el primero")
+		{
+			numeroMaximo=numeroIngresado;
+			numeroMinimo=numeroIngresado;
+			banderaDelPrimero="no es el primero";
+		} 
+		else 
+		{
+			if(numeroIngresado>numeroMaximo)
+			{
+				numeroMaximo=numeroIngresado;
+			}
+			if (numeroIngresado<numeroMinimo)
+			{
+				numeroMinimo=numeroIngresado;
 			}
 		}
 		respuesta=prompt("desea continuar?");
 	}
-	txtIdMaximo.value = "el máximo número ingresado es " + numeroMaximo;
-	txtIdMinimo.value = "el mínimo número ingresado es " + numeroMinimo;
+	
+	document.getElementById("txtIdMaximo").value="el máximo número ingresado es " + numeroMaximo;
+	document.getElementById("txtIdMinimo").value="el mínimo número ingresado es " + numeroMinimo;
 }//FIN DE LA FUNCIÓN

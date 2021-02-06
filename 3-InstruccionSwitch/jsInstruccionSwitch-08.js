@@ -1,23 +1,25 @@
 function mostrar()
 {
-	var destinoIngresado =txtIdDestino.value;
+	var destinoIngresado;
+	destinoIngresado=document.getElementById("txtIdDestino").value;
 	
-	switch(destinoIngresado) {
+	switch(destinoIngresado)
+	{
 		case "Bariloche":
-			puntoCardinal = "Oeste";
+			puntoCardinal="Oeste";
 			break;
 		case "Cataratas":
-			puntoCardinal = "Norte";
+			puntoCardinal="Norte";
 			break;
 		case "Mar del plata":
-			puntoCardinal = "Este";
+			puntoCardinal="Este";
 			break;
 		case "Ushuaia":
-			puntoCardinal = "Sur";
+			puntoCardinal="Sur";
 			break;
 	} 
 
-	alert(destinoIngresado + " esta en el " + puntoCardinal);
+	alert(destinoIngresado+" esta en el "+puntoCardinal);
 
 
 }//FIN DE LA FUNCIÓN//FIN DE LA FUNCIÓN

@@ -1,28 +1,23 @@
 function mostrar()
 {
 
-	var miArray = new Array();
+	var miArray=new Array();
 	var acum=0;
-	for (var i = 0; i <5; i++)
+	for (var i=0;i<5;i++)
 	{
-		miArray[i]=parseInt(prompt("Ingrese un numero"));
+		miArray[i]=prompt("Ingrese un numero");
+		miArray[i]=parseInt(miArray[i]);
 		acum+=miArray[i];
-
 	}
 
 
 
-	for(var i=0; i<5; i++)
+	for(var i=0;i<5;i++)
 	{
-
 		document.write("Posicion "+i+"-->"+miArray[i]+"<br>");
-
-
 	}
 
-	document.write("<h1> La suma de todos los numeros es: "+acum+"</h1>")
-
-
+	document.write("<h1> La suma de todos los numeros es: "+acum+"</h1>");
 
 
 }//FIN DE LA FUNCIÓN

@@ -4,9 +4,11 @@ con números DESCENDENTES, desde el 10 al 1.*/
 function mostrar()
 {
 	alert('iteración while');
-	var contador = 10;
-	while(contador >= 1) {
-		alert('ciclo : ' + contador );
+	var contador;
+	contador=10;
+	while(contador>=1)
+	{
+		alert('ciclo : '+contador);
 		contador--;
 	}
 }//FIN DE LA FUNCIÓN
