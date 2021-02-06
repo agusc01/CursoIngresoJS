@@ -11,15 +11,15 @@ function sumar()
 	var resultado;
 	var mensaje;
 	//ingreso
-	numeroUno = document.getElementById('txtIdNumeroUno').value;
-	numeroDos = document.getElementById('txtIdNumeroDos').value;
+	numeroUno=document.getElementById('txtIdNumeroUno').value;
+	numeroDos=document.getElementById('txtIdNumeroDos').value;
 
 	numeroDos=parseInt(numeroDos);
-	numeroUno = parseInt(numeroUno);
+	numeroUno=parseInt(numeroUno);
 	//fin ingreso
 	//inicio operar
-	resultado = numeroDos+numeroUno;
-	mensaje = "la suma es : " + resultado;
+	resultado=numeroDos+numeroUno;
+	mensaje="la suma es : " + resultado;
 
 	//mostrar
 	//alert("la suma es : "+(parseInt(document.getElementById('txtIdNumeroUno').value)+parseInt(document.getElementById('txtIdNumeroDos').value)));

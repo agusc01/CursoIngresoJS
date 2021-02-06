@@ -17,17 +17,17 @@ function mostrarAumento() {
   var importe;
   var resultado;
 
-  descuento = prompt("Ingrese el porcentaje del descuento");
+  descuento=prompt("Ingrese el porcentaje del descuento");
 
-  descuento = parseInt(descuento);
+  descuento=parseInt(descuento);
 
-  importe = document.getElementById('txtIdImporte').value;
+  importe=document.getElementById('txtIdImporte').value;
 
-  importe = parseInt(importe);
+  importe=parseInt(importe);
 
-  resultado = importe * ((100 - descuento )/100);
+  resultado=importe * ((100 - descuento )/100);
 
-  document.getElementById('txtIdResultado').value = resultado;
+  document.getElementById('txtIdResultado').value=resultado;
 
 }
 

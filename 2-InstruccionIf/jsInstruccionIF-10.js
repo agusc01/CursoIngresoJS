@@ -1,16 +1,29 @@
-var max = 10;
-var min = 0;
+/*
+Al presionar el Botón, asignar una nota RANDOM al examen y mostrar:
+"EXCELENTE" para notas igual a 9 o 10,
+"APROBÓ" para notas mayores a 4,
+"Vamos, la proxima se puede" para notas menores a 4
+*/
 
-function mostrar() {
-	//Genero el número RANDOM entre 1 y 10 
-	var resultado_examen = Math.round(Math.random() * (max - min) + min);
-	resultado_examen = parseInt(resultado_examen);
-	if (resultado_examen >=9){
-		alert("EXCELENTE: "+resultado_examen);
-	} else if (resultado_examen >=4) {
-		alert("APROBÓ: "+resultado_examen);
-	} else {
-		alert("Vamos, la proxima se puede: "+resultado_examen);
+
+function mostrar() 
+{
+	var resultadoExamen;
+	resultadoExamen=Math.floor(Math.random() * 10) + 1;  // returns a random integer from 1 to 10
+
+	if(resultadoExamen>8)
+	{
+		console.log("EXCELENTE: "+resultadoExamen)
+	} 
+	else
+	{
+		if(resultadoExamen>3)
+		{
+			console.log("APROBÓ: "+resultadoExamen);
+		}
+		else
+		{
+			console.log("Vamos, la proxima se puede: "+resultadoExamen);
+		}
 	}
-
 }//FIN DE LA FUNCIÓN

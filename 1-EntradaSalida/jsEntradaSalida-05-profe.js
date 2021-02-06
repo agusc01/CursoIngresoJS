@@ -24,5 +24,4 @@ function mostrar()
 	//alert(variableNoExiste);
 
 
-
 }

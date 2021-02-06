@@ -14,18 +14,18 @@ function sumar() {
 	var mensaje
 
 	// tomo los valores del los inputs
-	numeroUno = document.getElementById('txtIdNumeroUno').value;
-	numeroDos = document.getElementById('txtIdNumeroDos').value;
+	numeroUno=document.getElementById('txtIdNumeroUno').value;
+	numeroDos=document.getElementById('txtIdNumeroDos').value;
 	
 	// paso de "string" en "int" con la función parseInt
-	numeroUno = parseInt(numeroUno);
-	numeroDos = parseInt(numeroDos);
+	numeroUno=parseInt(numeroUno);
+	numeroDos=parseInt(numeroDos);
 	
 	// hago la suma de los números
-	suma = numeroUno + numeroDos;
+	suma=numeroUno + numeroDos;
 
 	// creo la estructura del mensaje
-	mensaje = 'la suma es de ' + numeroUno + ' + ' + numeroDos + " = " + suma;
+	mensaje='la suma es de ' + numeroUno + ' + ' + numeroDos + " = " + suma;
 
 	// muestro el mensaje previmente creado
 	alert(mensaje);

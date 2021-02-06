@@ -17,17 +17,17 @@ function mostrarAumento() {
   var resultado;
   var aumento;
 
-  aumento = prompt("Ingrese el porcentaje del aumento");
+  aumento=prompt("Ingrese el porcentaje del aumento");
 
-  aumento = parseInt(aumento);
+  aumento=parseInt(aumento);
 
-  sueldo = document.getElementById('txtIdSueldo').value;
+  sueldo=document.getElementById('txtIdSueldo').value;
 
-  sueldo = parseInt(sueldo);
+  sueldo=parseInt(sueldo);
 
-  resultado = sueldo * ((100 + aumento)/100);
+  resultado=sueldo * ((100 + aumento)/100);
 
-  document.getElementById('txtIdResultado').value = resultado;
+  document.getElementById('txtIdResultado').value=resultado;
 
 }
 

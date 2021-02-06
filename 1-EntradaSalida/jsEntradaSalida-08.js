@@ -9,15 +9,15 @@ function SacarResto() {
 	var dividendo;
 	var divisor;
 
-	dividendo = document.getElementById('txtIdNumeroDividendo').value;
-	dividendo = parseInt(dividendo)
+	dividendo=document.getElementById('txtIdNumeroDividendo').value;
+	dividendo=parseInt(dividendo)
 
-	divisor = document.getElementById('txtIdNumeroDivisor').value;
-	divisor = parseInt(divisor);
+	divisor=document.getElementById('txtIdNumeroDivisor').value;
+	divisor=parseInt(divisor);
 
-	resultado = dividendo % divisor;
+	resultado=dividendo % divisor;
 	alert("El resto de la división es: "+ resultado);	
 	
-	document.getElementById('txtIdNumeroDividendo').value = "";
-	document.getElementById('txtIdNumeroDivisor').value = "";
+	document.getElementById('txtIdNumeroDividendo').value="";
+	document.getElementById('txtIdNumeroDivisor').value="";
 }

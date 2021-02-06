@@ -13,15 +13,15 @@ function mostrarAumento() {
 
 	var sueldo;
 	var resultado;
-	var aumento = 10;
+	var aumento=10;
 
-	sueldo = document.getElementById('txtIdSueldo').value;
+	sueldo=document.getElementById('txtIdSueldo').value;
 
-	sueldo = parseInt(sueldo);
+	sueldo=parseInt(sueldo);
 
-	resultado = sueldo * ((100 + aumento)/100);
+	resultado=sueldo * ((100 + aumento)/100);
 
-	document.getElementById('txtIdResultado').value = resultado;
+	document.getElementById('txtIdResultado').value=resultado;
 
 }
 

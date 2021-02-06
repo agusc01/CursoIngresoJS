@@ -12,17 +12,17 @@ en el cuadro de texto "RESULTADO"
 
 function mostrarAumento() {
 
-	var descuento = 25;
+	var descuento=25;
 	var importe;
 	var resultado;
 
-	importe = document.getElementById('txtIdImporte').value;
+	importe=document.getElementById('txtIdImporte').value;
 
-	importe = parseInt(importe);
+	importe=parseInt(importe);
 
-	resultado = importe * ((100 - descuento )/100);
+	resultado=importe * ((100 - descuento )/100);
 
-	document.getElementById('txtIdResultado').value = resultado;
+	document.getElementById('txtIdResultado').value=resultado;
 
 }
 

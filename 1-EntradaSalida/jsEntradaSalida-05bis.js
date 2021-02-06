@@ -23,14 +23,14 @@ function mostrar() {
 	var apellidoIngresado;
 
 	// Tomo los varoles que estan dentro de los inputs y los pongo en cada variable creada previamente
-	nombreIngresado = document.getElementById('txtIdNombre').value;
-	edadIngresada = document.getElementById('txtIdEdad').value;
+	nombreIngresado=document.getElementById('txtIdNombre').value;
+	edadIngresada=document.getElementById('txtIdEdad').value;
 
 	// Tomo el valor del apellido con la función "prompt"
-	apellidoIngresado = prompt("Para finalizar le solicitamos que ingrese su apellido : ");
+	apellidoIngresado=prompt("Para finalizar le solicitamos que ingrese su apellido : ");
 
 	// Armo el mensaje que imprimiría en el futuro
-	mensaje = apellidoIngresado  + ", usted se llama " + nombreIngresado + " y tiene " + edadIngresada + " años";
+	mensaje=apellidoIngresado  + ", usted se llama " + nombreIngresado + " y tiene " + edadIngresada + " años";
 	
 
 	// Hago un alert y console.log para mostrar el mensaje previamente cargado
