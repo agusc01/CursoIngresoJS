@@ -13,14 +13,36 @@ var contadorIntentos;
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
-	 
-		//alert(numeroSecreto );
-	
+    alert("Inicio de Juego!, Número secreto creado");
+    numeroSecreto=Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100
+    //alert(numeroSecreto);
+    console.log(numeroSecreto);
+	contadorIntentos=0;
 
 }
 
 function verificar()
 {
-	
-	
+	var numeroIngresado;
+    numeroIngresado=document.getElementById("txtIdNumero").value;
+    numeroIngresado=parseInt(numeroIngresado);
+    contadorIntentos++;
+    document.getElementById("txtIdIntentos").value=contadorIntentos;
+
+    if(numeroIngresado==numeroSecreto)
+    {
+        alert("Usted es un ganador!!! y en solo "+contadorIntentos+" intentos");
+    }
+    else
+    {
+        if(numeroIngresado<numeroSecreto)
+        {
+            alert("falta…");
+        }
+        else
+        {
+            alert("se pasó…");
+        }
+    }
+        
 }
