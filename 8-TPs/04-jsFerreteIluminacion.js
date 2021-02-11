@@ -1,4 +1,10 @@
-/*4.	Para el departamento de iluminación:
+/*4.	
+
+Alumno: Cacciatori, Agustín
+
+Parte A+B+C+D+E
+
+Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -18,11 +24,12 @@ function CalcularPrecio()
     var mensaje;
     var ingresosBrutos;
 
+    descuento=0;
     lampara=35;
     cantidad=document.getElementById("txtIdCantidad").value;
     cantidad=parseInt(cantidad);
     marca=document.getElementById("Marca").value;
-    /* 
+    
     if(cantidad>5)
     {
         descuento=50;
@@ -72,64 +79,15 @@ function CalcularPrecio()
                             descuento=5;
                         }
                     }
-                }
-            }
-        }
-    }
-    */
-
-    switch(cantidad)
-    {
-        case 3:
-            if(marca=="ArgentinaLuz")
-            {
-                descuento=15;
-            }
-            else
-            {
-                if(marca=="FelipeLamparas")
-                {
-                    descuento=10;
-                }
-                else
-                {
-                    descuento=5;
-                }
-            }
-            break;
-        case 4:
-            if(marca=="ArgentinaLuz"||marca=="FelipeLamparas")
-            {
-                descuento=25;
-            }
-            else
-            {
-                descuento=20;
-            }
-            break;
-        case 5:
-            if(marca=="ArgentinaLuz")
-            {
-                descuento=40;
-            }
-            else
-            {
-                descuento30;
-            }
-            break;
-        default:
-            if(cantidad>5)
-            {
-                descuento=50;
-            }         
-    }
-
-
-    document.getElementById("txtIdprecioDescuento").value=descuento+"%";
+                }//fin if(cantidad==3)
+            }//fin if(cantidad==4)
+        }//fin if(cantidad==5)
+    }//fin if(cantidad>5)
+    
 
     precio=lampara*cantidad*((100-descuento)/100);
 
-
+    
     if(precio>120)
     {
         ingresosBrutos=precio*0.10;
@@ -137,6 +95,7 @@ function CalcularPrecio()
         mensaje="IIBB Usted pago "+precio+", siendo "+ingresosBrutos+" el impuesto que se pagó";
         alert(mensaje)
     }
-
+    
+    document.getElementById("txtIdprecioDescuento").value=precio;
 
 }
