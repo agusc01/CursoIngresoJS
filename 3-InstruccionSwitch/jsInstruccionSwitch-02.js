@@ -1,30 +1,47 @@
-function mostrar() {
-	//tomo el mes
+/*
+
+Alumno: Cacciatori, Agustín
+2)
+Enunciado:
+al seleccionar un mes informar.
+si estamos en Invierno: "Abrigate que hace frio."
+si aún no llego el Invierno: "Falta para el invierno."
+si ya paso el Invierno: "Ya pasamos el frio, ahora calor!!!."
+
+ACLARACIÓN: tomamos a Julio y Agosto como los meses de Invierno.
+
+
+*/
+
+
+function mostrar() 
+{
 	var mesDelAño;
-	mesDelAño=document.getElementById('txtIdHora').value;
+	var mensaje;
+	mesDelAño=document.getElementById('txtIdMes').value;
 	switch(mesDelAño)
 	{
+
+		// ANTES DEL INVIERNO
 		case 'Enero':
-			break;
 		case 'Febrero':
-			break;
 		case 'Marzo':
 		case 'Abril':
 		case 'Mayo':
 		case 'Junio':
-			alert("Falta para el invierno");
+			mensaje="Falta para el invierno";
 			break;
+
+		// DURANTE EL INVIERNO
 		case 'Julio':
 		case 'Agosto':
-			alert("Abrigate que hace frio");
+			mensaje="Abrigate que hace frio";
 			break;
-		case 'Septiembre':
-		case 'Obtubre':
-		case 'Noviembre':
-			alert("Ya pasamos el frio, ahora calor!!!");
+
+		//DESPUES DEL INVIERNO
+		default:
+			mensaje="Ya pasamos el frio, ahora calor!!!";
 			break;
-		case 'Diciembre':
-			break;
-		default:																		
 	}
-	}//FIN DE LA FUNCIÓN
+	alert(mensaje);
+}//FIN DE LA FUNCIÓN

@@ -1,25 +1,39 @@
+/*
+
+Alumno: Cacciatori, Agustín
+8)
+Enunciado:
+Al seleccionar un destino informar si hace FRIO o CALOR en ese destino
+
+*/
+
+
 function mostrar()
 {
 	var destinoIngresado;
+	var temperatura;
+	var mensaje;
 	destinoIngresado=document.getElementById("txtIdDestino").value;
 	
 	switch(destinoIngresado)
 	{
 		case "Bariloche":
-			puntoCardinal="Oeste";
-			break;
-		case "Cataratas":
-			puntoCardinal="Norte";
-			break;
-		case "Mar del plata":
-			puntoCardinal="Este";
-			break;
 		case "Ushuaia":
-			puntoCardinal="Sur";
+			temperatura="FRIO";
 			break;
+		/* 
+		case "Cataratas":
+		case "Mar del plata":
+		 */
+		default:
+			temperatura="CALOR";
+			break;
+
 	} 
 
-	alert(destinoIngresado+" esta en el "+puntoCardinal);
+	mensaje="En "+destinoIngresado+" hace "+temperatura;
+
+	alert(mensaje);
 
 
 }//FIN DE LA FUNCIÓN//FIN DE LA FUNCIÓN

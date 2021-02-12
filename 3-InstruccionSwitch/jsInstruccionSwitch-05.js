@@ -1,5 +1,16 @@
-function mostrar() {
-	//tomo la hora
+/*
+
+Alumno: Cacciatori, Agustín
+5)
+
+Enunciado:
+Al ingresar una hora, informar:
+si está entre las 7 y las 11 : "Es de mañana.".
+
+*/
+
+function mostrar() 
+{
 	var horaDelDia;
 	horaDelDia=document.getElementById('txtIdHora').value;
 	horaDelDia=parseInt(horaDelDia);
@@ -11,9 +22,6 @@ function mostrar() {
 		case 10:
 		case 11:
 			alert("Es de mañana");
-			break;																		
-		default:
-			alert("Error al ingresar el dato, fuera del rango o NO es numérico")
-			txtIdHora.value="";
+			break;											
 	}
 }//FIN DE LA FUNCIÓN
