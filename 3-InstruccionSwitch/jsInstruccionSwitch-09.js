@@ -1,7 +1,5 @@
 /*
 
-Alumno: Cacciatori, Agustín
-9)
 Enunciado:
 una agencia de viajes debe sacar las tarifas de los viajes , se cobra $15.000 por cada estadia como base, se pide el ingreso de una estacion del año y localidad para vacacionar para poder calcular el precio final
 
@@ -17,20 +15,20 @@ en Otoño y Primavera: bariloche tiene un aumento del 10% cataratas tiene un aum
 function mostrar()
 {
 	var precio;
-	var destinoIngresado;
-	var estacionIngresada;
+	var destino;
+	var estacion;
 	var mensaje;
 	var porcentaje;
 
 	precio=15000;
 	
-	destinoIngresado=document.getElementById("txtIdDestino").value;
-	estacionIngresada=document.getElementById("txtIdEstacion").value;
+	destino=document.getElementById("txtIdDestino").value;
+	estacion=document.getElementById("txtIdEstacion").value;
 
-	switch(estacionIngresada)
+	switch(estacion)
 	{
 		case 'Invierno':
-			switch(destinoIngresado)
+			switch(destino)
 			{
 				case 'Bariloche':
 					porcentaje=20;
@@ -48,7 +46,7 @@ function mostrar()
 			break;
 
 		case 'Verano':
-			switch(destinoIngresado)
+			switch(destino)
 			{
 				case 'Bariloche':
 					porcentaje=-20;
@@ -69,7 +67,7 @@ function mostrar()
 		// case 'Otoño':
 		// case 'Primavera':
 		default:
-			switch(destinoIngresado)
+			switch(destino)
 			{
 				case 'Cordoba':
 					break;	
@@ -88,7 +86,7 @@ function mostrar()
 
 	precio=precio*((100+porcentaje)/100);
 
-	mensaje='Elegiste ir a '+destinoIngresado+' en el '+estacionIngresada+' lo cual sale $'+ precio;
+	mensaje='Elegiste ir a '+destino+' en el '+estacion+' lo cual sale $'+ precio;
 	
 	alert(mensaje);
 

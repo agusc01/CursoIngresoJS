@@ -1,4 +1,7 @@
 /*
+
+Alumno: Cacciatori, Agustín
+
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
 1-Suma de los negativos.
@@ -9,45 +12,59 @@ hasta que el usuario quiera, mostrar:
 6-Cantidad de números pares.
 7-Promedio de positivos.
 8-Promedios de negativos.
-9-Diferencia entre positivos y negativos, (positvos-negativos). */
+9-Diferencia entre positivos y negativos, (positvos-negativos). 
+*/
 function mostrar()
-{
-	//declarar contadores y variables 
+{ 
 	var respuesta;
 	var numeroIngresado;
-	var sumaNegativos=0;
-	var sumaPositivos=0;
-	var cantidadDeNegativos=0;
-	var cantidadDePositivos=0;
-	var cantidadDeCeros=0;
-	var cantidadDeNumerosPares=0;
-	var promedioNumerosPositivos=0;
-	var promedioNumerosNegativos=0;
+	var sumaNegativos;
+	var sumaPositivos;
+	var cantidadDeNegativos;
+	var cantidadDePositivos;
+	var cantidadDeCeros;
+	var cantidadDeNumerosPares;
+	var promedioNumerosPositivos;
+	var promedioNumerosNegativos;
 	
+
+	sumaNegativos=0;
+	sumaPositivos=0;
+	cantidadDeNegativos=0;
+	cantidadDePositivos=0;
+	cantidadDeCeros=0;
+	cantidadDeNumerosPares=0;
+	promedioNumerosPositivos=0;
+	promedioNumerosNegativos=0;
 
 	respuesta="si";
 
 	while(respuesta=="si")
 	{
-
 		numeroIngresado=prompt("Ingrese un número: ");
 		numeroIngresado=parseInt(numeroIngresado);
+
+		while(isNaN(numeroIngresado)==true)
+		{
+			numeroIngresado=prompt("Error, Ingrese un número: ");
+			numeroIngresado=parseInt(numeroIngresado);
+		}
 
 		if(numeroIngresado<0) // valores negativos
 		{ 
 			sumaNegativos=sumaNegativos+numeroIngresado;
-			cantidadDeNegativos++;
+			cantidadDeNegativos=cantidadDeNegativos+1;
 		} 
 		else 
 		{ 
 			if(numeroIngresado==0) // solo si el numero ingresado es 0 (cero)
 			{
-				cantidadDeCeros++;
+				cantidadDeCeros=cantidadDeCeros+1;
 			}
 			else // valores positivos
 			{
 				sumaPositivos=sumaPositivos+numeroIngresado;
-				cantidadDePositivos++;
+				cantidadDePositivos=cantidadDePositivos+1;
 			}
 		} 
 
@@ -61,18 +78,21 @@ function mostrar()
 		promedioNumerosNegativos=sumaNegativos/cantidadDeNegativos;
 		diferencia=sumaPositivos-sumaNegativos;
 
-		
-		respuesta=prompt("desea continuar?");
+		respuesta=prompt("Si quiere seguir tipiar 'si'");
+
 	}//fin del while
 
-	document.write("la suma de negativos es :"+sumaNegativos+'<br>');
-	document.write("la suma de positivos es :"+sumaPositivos+'<br>');
-	document.write("la cantidad de positivos es: "+cantidadDePositivos+'<br>');
-	document.write("la cantidad de negativos es: "+cantidadDeNegativos+'<br>');
-	document.write("la cantidad de ceros es: "+cantidadDeCeros+'<br>');
-	document.write("la cantidad de números pares es: "+cantidadDeNumerosPares+'<br>');
-	document.write("El promedio de números positivos es : "+promedioNumerosPositivos+'<br>');
-	document.write("El promedio de números negativos es : "+promedioNumerosNegativos+'<br>');
-	document.write("Diferencia entre positivos y negativos, (positvos-negativos) es : "+diferencia+'<br>');
+
+	console.log("la suma de negativos es :"+sumaNegativos);
+	console.log("la suma de positivos es :"+sumaPositivos);
+	console.log("la cantidad de positivos es: "+cantidadDePositivos);
+	console.log("la cantidad de negativos es: "+cantidadDeNegativos);
+	console.log("la cantidad de ceros es: "+cantidadDeCeros);
+	console.log("la cantidad de números pares es: "+cantidadDeNumerosPares);
+	console.log("El promedio de números positivos es : "+promedioNumerosPositivos);
+	console.log("El promedio de números negativos es : "+promedioNumerosNegativos);
+	console.log("Diferencia entre positivos y negativos, (positvos-negativos) es : "+diferencia);
+
+	alert("Mirar los resultados en la consola!");
 
 }//FIN DE LA FUNCIÓN

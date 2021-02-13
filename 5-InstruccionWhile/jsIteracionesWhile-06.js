@@ -1,20 +1,40 @@
+/*
+
+Alumno: Cacciatori, Agustín
+
+Enunciado:
+Al presionar el botón pedir 5 números e informar la suma acumulada y el promedio.
+
+*/
+
+
 function mostrar()
 {
 	var contador;
 	var acumulador;
 	var numeroIngresado;
+	var promedio;
 
-	contador=1;
+	contador=0;
 	acumulador=0;
 
-	while(contador<6)
+	while(contador<5)
 	{
-		numeroIngresado=prompt(contador + "- ingrese un número: ");
+		contador=contador+1;
+		numeroIngresado=prompt("Ingrese un número: #"+contador);
 		numeroIngresado=parseInt(numeroIngresado);
+
+		while(isNaN(numeroIngresado)==true)
+		{
+			numeroIngresado=prompt("Error, Ingrese un número: #"+contador);
+			numeroIngresado=parseInt(numeroIngresado);
+		}
+
 		acumulador=acumulador+numeroIngresado;
-		contador++;
 	}
 
+	promedio=acumulador/contador;
+
 	document.getElementById("txtIdSuma").value=acumulador;
-	document.getElementById("txtIdPromedio").value=acumulador/5;
+	document.getElementById("txtIdPromedio").value=promedio;
 }//FIN DE LA FUNCIÓN
