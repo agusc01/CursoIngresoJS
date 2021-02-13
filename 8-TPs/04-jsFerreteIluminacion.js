@@ -3,6 +3,7 @@
 Alumno: Cacciatori, Agustín
 
 Parte A+B+C+D+E
+Ferrete iluminancion Con if (cantidad) y switch (marca)
 
 Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
@@ -38,52 +39,51 @@ function CalcularPrecio()
     {
         if(cantidad==5)
         {
-            if(marca=="ArgentinaLuz")
+            switch(marca)
             {
-                descuento=40;
-            }
-            else
-            {
-                descuento=30;
+                case "ArgentinaLuz":
+                    descuento=40;
+                    break;
+                default:
+                    descuento=30;
+                    break;
             }
         }
         else
         {
             if(cantidad==4)
             {
-                if(marca=="ArgentinaLuz" || marca=="FelipeLamparas")
+                switch(marca)
                 {
-                    descuento=25;
-                }
-                else
-                {
-                    descuento=20;
+                    case "ArgentinaLuz":
+                    case "FelipeLamparas":
+                        descuento=25;
+                        break;
+                    default:
+                        descuento=20;
                 }
             }
             else
             {
                 if(cantidad==3)
                 {
-                    if(marca=="ArgentinaLuz")
+                    switch(marca)
                     {
-                        descuento=15;
-                    }
-                    else
-                    {
-                        if(marca=="FelipeLamparas")
-                        {
+                        case "ArgentinaLuz":
+                            descuento=15;
+                            break;
+                        case "FelipeLamparas":
                             descuento=10;
-                        }
-                        else
-                        {
+                            break;
+                        default:
                             descuento=5;
-                        }
                     }
                 }//fin if(cantidad==3)
             }//fin if(cantidad==4)
         }//fin if(cantidad==5)
     }//fin if(cantidad>5)
-    
+
+
 
     precio=lampara*cantidad*((100-descuento)/100);
 
