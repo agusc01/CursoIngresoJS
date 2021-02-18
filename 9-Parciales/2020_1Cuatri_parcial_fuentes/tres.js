@@ -1,3 +1,20 @@
+/*
+
+Alumno: Cacciatori, Agustín
+
+Enunciado:
+
+Bienvenidos.
+En el ingreso a un viaje en avion nos solicitan nombre , edad, sexo("f" o "m") y estado civil("soltero", "casado" o "viudo")y temperatura corporal.
+a) El nombre de la persona con mas temperatura.
+b) Cuantos mayores de edad estan viudos
+c) La cantidad de hombres que hay solteros o viudos.
+d) cuantas personas de la tercera edad( mas de 60 años) , tienen mas de 38 de temperatura
+e) El promedio de edad entre los hombres solteros.
+
+*/
+
+
 function mostrar()
 {
 	//creación de variables
@@ -39,12 +56,12 @@ function mostrar()
 	{
 		nombre=prompt("Ingrese el nombre de la persona: ");
 
-		edad=prompt("Ingrese la edad: ");
+		edad=prompt("Ingrese la edad (18 a 90años): ");
 		edad=parseInt(edad);
 		//NO lo pido pero yo valido la edad en cierto rango
 		while(isNaN(edad)==true || edad<18 || edad>90)
 		{
-			edad=prompt("Ingrese la edad: ");
+			edad=prompt("Error, ingrese la edad (18 a 90años): ");
 			edad=parseInt(edad);
 		}
 
@@ -60,8 +77,14 @@ function mostrar()
 			estadoCivil=prompt("Error, ingrese el estado civil (soltero | casado | viudo):");
 		}
 
-		temperatura=prompt("Ingrese la temperatura corporal: ");
+		temperatura=prompt("Ingrese la temperatura corporal (34 a 40): ");
 		temperatura=parseInt(temperatura);
+		////NO lo pido pero yo valido la edad en cierto rango
+		while(isNaN(temperatura)==true || temperatura<34 || temperatura>40)
+		{
+			temperatura=prompt("Ingrese la temperatura corporal (34 a 40): ");
+			temperatura=parseInt(temperatura);
+		}
 
 		//punto A
 		if(banderaTemperatura==true)

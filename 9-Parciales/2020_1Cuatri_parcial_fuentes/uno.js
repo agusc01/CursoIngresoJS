@@ -1,11 +1,32 @@
+/*
+
+Alumno: Cacciatori, Agustín
+
+Enunciado:
+
+Debemos realizar la carga de 5(cinco) productos de prevención de contagio,
+de cada una debo obtener los siguientes datos:
+el tipo (validar "barbijo" , "jabón" o "alcohol") ,
+el precio (validar entre 100 y 300),
+la cantidad de unidades (no puede ser 0 o negativo y no debe superar las 1000 unidades),
+la Marca y el fabricante.
+Se debe Informar al usuario lo siguiente:
+a) Del más barato de los alcohol, la cantidad de unidades y el fabricante
+b) Del tipo con mas unidades, el promedio por compra
+c) Cuántas unidades de jabones hay en total
+
+*/
+
+
+
 function mostrar()
 {
 	//para el while
 	var contador;
 	//variables generales
 	var producto;//barbijo , jabon, alcohol
-	var precio;
-	var cantidad;
+	var precio;//100 a 300
+	var cantidad;//1 a 1000
 	var marca;
 	var fabricante;
 	var mensaje;
@@ -53,7 +74,7 @@ function mostrar()
 		//============== SECCIÓN PRECIOS ==============
 		precio=prompt("Ingrese el precio del producto (entre $100 a $300): ");
 		precio=parseInt(precio);
-		while(isNaN(precio)==true || precio<99 || precio>301)
+		while(isNaN(precio)==true || precio<100 || precio>300)
 		{
 			precio=prompt("Error, ingrese el precio del producto (entre $100 a $300): ");
 		}
@@ -61,7 +82,7 @@ function mostrar()
 		//============== SECCIÓN CANTIDADES ==============
 		cantidad=prompt("Ingrese la cantidad del producto (entre 1 a 1000): ");
 		cantidad=parseInt(cantidad);
-		while(isNaN(cantidad)==true || cantidad<1 || cantidad>1001)
+		while(isNaN(cantidad)==true || cantidad<1 || cantidad>1000)
 		{
 			cantidad=prompt("Error, ingrese la cantidad del producto (entre 1 a 1000): ");
 		}
@@ -73,7 +94,7 @@ function mostrar()
 		fabricante=prompt("Ingrese el fabricante del producto: ");
 
 
-		//punto B
+		//punto A, B y C
 		switch(producto)
 		{
 			case "barbijo":
@@ -179,7 +200,7 @@ function mostrar()
 
 /* 
 ======== TEST ========
-
+ENTRADAS ...
 barbijo
 150$
 100u
@@ -210,13 +231,14 @@ barbijo
 truchito
 china
 
+SALIDAS...
 Se hicieron 5 compras y no se compro alcohol
 Lo que se compro más fue barbijo con un promedio de 700
 Se compraron 700 unidades de jabón
 
 
 
-
+ENTRADAS ...
 barbijo
 150$
 100u
@@ -247,6 +269,7 @@ barbijo
 truchito
 china
 
+SALIDAS...
 El alcohol más barato es fue del fabricante: anderson, se compraron: 500, a un precio de $110 c/u
 Lo que se compro más fue barbijo con un promedio de 700
 No se compro jabón

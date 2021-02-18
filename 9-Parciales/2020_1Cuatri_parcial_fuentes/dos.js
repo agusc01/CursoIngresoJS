@@ -1,9 +1,30 @@
+/*
+
+Alumno: Cacciatori, Agustín
+
+Enunciado:
+
+Realizar el algoritmo que permita ingresar los datos de una compra productos de la construccion, hasta que el cliente quiera:
+Tipo validad("arena";"cal";"cemento")
+Cantidad de bolsas,
+Precio por bolsa (más de cero ),
+
+Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
+Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
+a) El importe total a pagar , bruto sin descuento y...
+b) el importe total a pagar con descuento(solo si corresponde)
+d) Informar el tipo con mas cantidad de bolsas.
+f) El tipo mas caro
+
+*/
+
+
 function mostrar()
 {
   //creación de variables
   //general
   var producto; //arena,cal, cemento
-  var cantidad;
+  var cantidad; //más de cero
   var precio; //más de cero
   var descuento;
   var seguir;
@@ -13,12 +34,12 @@ function mostrar()
   var totalNeto;
   //punto B
   var totalDescuento;
-  //punto C
+  //punto D
   var cantidadArena;
   var cantidadCal;
   var cantidadCemento;
   var productoMasVendido;
-  //punto D
+  //punto F
   var productoMasCaro;
   var precioMasCaro;
   var banderaPrecioMasCaro;
@@ -35,14 +56,19 @@ function mostrar()
 
   while(seguir=="si")
   {
-    producto=prompt("Ingrese el producto: ");
+    producto=prompt("Ingrese el producto (arena | cal | cemento) ");
     while(producto!="arena" && producto!="cal" && producto!="cemento")
     {
-      producto=prompt("Error, ingrese el producto: ");
+      producto=prompt("Error, ingrese el producto (arena | cal | cemento) : ");
     }
   
     cantidad=prompt("Ingrese cantidad de bolsas: ");
     cantidad=parseInt(cantidad);
+    while(isNaN(cantidad)==true || cantidad<1)
+    {
+      cantidad=prompt("Error, inngrese cantidad de bolsas: ");
+      cantidad=parseInt(cantidad);
+    }
   
     precio=prompt("Ingrese el precio por bolsa: ");
     precio=parseInt(precio);
@@ -59,16 +85,22 @@ function mostrar()
     else
     {
       if(cantidad>10)
-      descuento=15;
+      {
+        descuento=15;
+      }
+      else //cantidad<=10
+      {
+        descuento=0;
+      }
     }
 
     //punto A
-    totalNeto=totalNeto+precio*cantidad;
+    totalNeto=totalNeto+(precio*cantidad);
 
     //punto B
     totalDescuento=totalDescuento+(precio*cantidad*((100-descuento)/100));
 
-    //punto C
+    //punto D
     switch(producto)
     {
       case "arena":
@@ -84,7 +116,7 @@ function mostrar()
     }
 
 
-    //punto D
+    //punto F
     if(banderaPrecioMasCaro==true)
     {
       banderaPrecioMasCaro=false;
@@ -114,17 +146,24 @@ function mostrar()
   alert(mensaje);
 
   //punto B
-  mensaje="Punto B : Usted deber pagar $"+totalDescuento+" ,esto contempla el descuento "
+  if(totalDescuento!=totalNeto)
+  {
+    mensaje="Punto B : Usted deber pagar $"+totalDescuento+" ,esto contempla el descuento ";
+  }
+  else
+  {
+    mensaje="Punto B : Usted no recibio ningún tipo de descuento."
+  }
   alert(mensaje);
 
-  //punto C
+  //punto D
   if(cantidadArena>cantidadCal)
   {
     if(cantidadArena>cantidadCemento)
     {
       //arena
       //arena>cal && arena>cemento
-      productoMasVendido="arena";
+      productoMasVendido="arena, con "+cantidadArena+" bolsas";
     }
     /*else
     {
@@ -138,21 +177,21 @@ function mostrar()
     {
       //cal
       //cal>=arena && cal>cemento
-      productoMasVendido="cal";
+      productoMasVendido="cal, con"+cantidadCal+" bolsas";
     }
     else
     {
       //cemento
       //cal>=arena && cemento>=cal <=> cemento>=cal>=arena
-      productoMasVendido="cemento";
+      productoMasVendido="cemento, con"+cantidadCemento+" bolsas";
     }
   }//fin if(cantidadArena>cantidadCal) ... esto es para encontrar un máximo entre los 3 productos
 
-  mensaje="El producto que más cantidad de bolsas de compro fue "+productoMasVendido;
+  mensaje="Punto D: El producto con más cantidad de bolsas de compro fue "+productoMasVendido;
   alert(mensaje);
 
-  //punto D
-  mensaje="El tipo de más caro es: "+productoMasCaro;
+  //punto F
+  mensaje="Punto F: El tipo de más caro es: "+productoMasCaro;
   alert(mensaje);
 
 }
@@ -160,6 +199,8 @@ function mostrar()
 
 /*
 
+=======TEST=========
+ENTRADAS...
 arena
 30u
 10$
@@ -188,10 +229,9 @@ arena
 5
 $5
 
-
-$5013 neto
-$3789.75 descuento (no es exacto porque uso enteros en lugar de flotantes)
-cemento mas bolsas
-cal mas caro
-
+SALIDAS...
+Punto A : Usted debe pagar un neto de $5013
+Punto B : Usted deber pagar $3796 ,esto contempla el descuento 
+Punto D: El producto con más cantidad de bolsas de compro fue cemento, con 135 bolsas
+Punto F: El tipo de más caro es: cal
 */
