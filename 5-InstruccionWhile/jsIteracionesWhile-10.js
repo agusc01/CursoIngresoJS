@@ -74,14 +74,33 @@ function mostrar()
 			cantidadDeNumerosPares++;
 		}
 
-		promedioNumerosPositivos=sumaPositivos/cantidadDePositivos;
-		promedioNumerosNegativos=sumaNegativos/cantidadDeNegativos;
-		diferencia=sumaPositivos-sumaNegativos;
 
 		respuesta=prompt("Si quiere seguir tipiar 'si'");
 
+
 	}//fin del while
 
+
+
+	if (cantidadDePositivos==0)
+	{
+		promedioNumerosPositivos=0;
+	}
+	else
+	{
+		promedioNumerosPositivos = sumaPositivos / cantidadDePositivos;
+	}
+
+	if(cantidadDeNegativos==0)
+	{
+		promedioNumerosNegativos=0;
+	}
+	else
+	{
+		promedioNumerosNegativos = sumaNegativos / cantidadDeNegativos;
+	}
+
+	diferencia = sumaPositivos - sumaNegativos;
 
 	console.log("la suma de negativos es :"+sumaNegativos);
 	console.log("la suma de positivos es :"+sumaPositivos);
