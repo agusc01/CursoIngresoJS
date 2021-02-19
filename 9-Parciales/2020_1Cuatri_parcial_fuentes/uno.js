@@ -175,6 +175,12 @@ function mostrar()
 			mensaje="barbijo"
 			promedio=cantidadBarbijo/vecesCompraBarbijo;
 		}
+		else// if(cantidadJabon>=cantidadBarbijo)
+		{
+			// cantidadJabon
+			mensaje="jabón";
+			promedio=cantidadJabon/vecesCompraJabon;
+		}
 	}
 
 	mensaje="Lo que se compro más fue "+mensaje+" con un promedio de "+promedio+" unidades";
@@ -232,10 +238,9 @@ truchito
 china
 
 SALIDAS...
-Se hicieron 5 compras y no se compro alcohol
+El alcohol más barato es fue del fabricante: anderson, se compraron: 500, a un precio de $110 c/u
 Lo que se compro más fue barbijo con un promedio de 700
-Se compraron 700 unidades de jabón
-
+No se compro jabón
 
 
 ENTRADAS ...
@@ -269,9 +274,11 @@ barbijo
 truchito
 china
 
+
 SALIDAS...
-El alcohol más barato es fue del fabricante: anderson, se compraron: 500, a un precio de $110 c/u
+Se hicieron 5 compras y no se compro alcohol
 Lo que se compro más fue barbijo con un promedio de 700
-No se compro jabón
+Se compraron 700 unidades de jabón
+
 
 */

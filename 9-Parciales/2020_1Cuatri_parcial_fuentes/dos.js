@@ -165,11 +165,11 @@ function mostrar()
       //arena>cal && arena>cemento
       productoMasVendido="arena, con "+cantidadArena+" bolsas";
     }
-    /*else
+    else
     {
       //cemento
       //arena>cal && cemento>=arena <=> cemento>=arena>cal
-    }*/
+    }
   }
   else
   {
