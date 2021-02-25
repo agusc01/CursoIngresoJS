@@ -1,5 +1,3 @@
-
-
 function mostrar()
 {
 	var contador;
