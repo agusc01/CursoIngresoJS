@@ -74,21 +74,12 @@ function mostrar()
 				edad=prompt("Error, ingrese la edad: ");
 				edad=parseInt(edad);
 			}
-			if(banderaMujerMasJoven==true)
+			if(banderaMujerMasJoven==true || edad<edadMujerMasJoven)
 			{
 				banderaMujerMasJoven=false;
 				nombreMujerMasJoven=nombre;
 				edadMujerMasJoven=edad;
 			}
-			else
-			{
-				if(edad<edadMujerMasJoven)
-				{
-					nombreMujerMasJoven=nombre;
-					edadMujerMasJoven=edad;
-				}
-			}
-
 		}
 		else//sexo=='masculino'
 		{
@@ -97,40 +88,23 @@ function mostrar()
 				edad=prompt("Error, ingrese la edad: ");
 				edad=parseInt(edad);
 			}
-			if(banderaHombreMasBajo==true)
+			if(banderaHombreMasBajo==true || altura<alturaHombreMasBajo)
 			{
 				banderaHombreMasBajo=false;
 				nombreHombreMasBajo=nombre;
 				alturaHombreMasBajo=altura;
 			}
-			else
-			{
-				if(altura<alturaHombreMasBajo)
-				{
-					nombreHombreMasBajo=nombre;
-					alturaHombreMasBajo=altura;
-				}
-			}
+
 		}//fin if(sexo=='f')
 	
 
-		if(banderaMasAlto==true)
+		if(banderaMasAlto==true || altura>personaMasAlta)
 		{
 			banderaMasAlto=false;
 			nombreMasAlto=nombre;
 			sexoDelMasAlto=sexo;
 			personaMasAlta=altura;
 		}
-		else
-		{
-			if(altura>personaMasAlta)
-			{
-				nombreMasAlto=nombre;
-				sexoDelMasAlto=sexo;
-				personaMasAlta=altura;
-			}
-		}//fin if(banderaMasAlto==true)
-
 
 
 		respuestaDeCorte=prompt("Si quiere seguir ingresar 'si' ");
