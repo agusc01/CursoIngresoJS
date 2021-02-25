@@ -1,21 +1,27 @@
 /*
 
 Alumno: Cacciatori, Agustín
-9)
-Al presionar el botón pedir  números  hasta que el usuario quiera,
-mostrar el número máximo y el número mínimo ingresado.
+9)bis while 09(el menor de los pares y el mayor de los negativos ...solo si hay)
 
 */
 function mostrar()
 {	
-	var banderaDelPrimero;
+	//declaración de variables
+	var banderaMenorPar;
+	var banderaMayorNegativo;
 	var numeroIngresado;
-	var numeroMaximo;
-	var numeroMinimo;
+	var numeroMenorPar;
+	var numeroMayorNegativo;
 	var respuesta;
+	var mensajeMenorPar;
+	var mensajeMayorNegativo;
 
-	banderaDelPrimero=true;
+	//inicialización de variables
+	banderaMenorPar=true;
+	banderaMayorNegativo=true;
 	respuesta='si';
+
+
 	while(respuesta=="si")
 	{
 		numeroIngresado=prompt("Ingrese un número");
@@ -27,26 +33,65 @@ function mostrar()
 			numeroIngresado=parseInt(numeroIngresado);
 		}
 
-		if(banderaDelPrimero==true)
+		if(numeroIngresado%2==0)//número par
 		{
-			numeroMaximo=numeroIngresado;
-			numeroMinimo=numeroIngresado;
-			banderaDelPrimero=false;
-		} 
-		else 
-		{
-			if(numeroIngresado>numeroMaximo)
+			if(banderaMenorPar==true)
 			{
-				numeroMaximo=numeroIngresado;
+				banderaMenorPar=false;
+				numeroMenorPar=numeroIngresado;
 			}
-			if (numeroIngresado<numeroMinimo)
+			else
 			{
-				numeroMinimo=numeroIngresado;
+				if(numeroIngresado<numeroMenorPar)
+				{
+					numeroMenorPar=numeroIngresado;
+				}
 			}
 		}
+
+		if(numeroIngresado<0)
+		{
+			if(banderaMayorNegativo==true)
+			{
+				banderaMayorNegativo=false;
+				numeroMayorNegativo=numeroIngresado;
+			}
+			else
+			{
+				if(numeroIngresado>numeroMayorNegativo)
+				{
+					numeroMayorNegativo=numeroIngresado;
+				}
+			}
+		}
+
 		respuesta=prompt("Si quiere seguir tipiar 'si'");
-	}
+	}//fin while(respuesta=="si")
 	
-	document.getElementById("txtIdMaximo").value="el máximo número ingresado es " + numeroMaximo;
-	document.getElementById("txtIdMinimo").value="el mínimo número ingresado es " + numeroMinimo;
+
+	if(banderaMenorPar==false)
+	{
+		mensajeMenorPar="El menor par es "+numeroMenorPar;
+	}
+	else
+	{
+		mensajeMenorPar="No hay números pares";
+	}
+	document.getElementById("txtIdMinimo").value=mensajeMenorPar;
+	console.log(mensajeMenorPar);
+
+	if(banderaMayorNegativo==false)
+	{
+		mensajeMayorNegativo="El mayor de los negativo es "+numeroMayorNegativo;
+	}
+	else
+	{
+		mensajeMayorNegativo="No hay números negativos";
+	}
+	document.getElementById("txtIdMaximo").value=mensajeMayorNegativo;
+	console.log(mensajeMayorNegativo);
+
+
+
+	
 }//FIN DE LA FUNCIÓN

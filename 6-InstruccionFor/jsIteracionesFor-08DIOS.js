@@ -55,7 +55,7 @@ function mostrar()
 	alert(mensaje)
 	*/
 
-
+	/*
 	var numeroIngresado;
 	var numeroAnterior;
 	var mensaje;
@@ -70,14 +70,30 @@ function mostrar()
 		numeroIngresado=parseInt(numeroIngresado);	
 	}
 
-	limite=numeroIngresado/2;
-	for(numeroAnterior=2;numeroAnterior<limite;numeroAnterior++)
+	//solo si es impar, NO existe números primos pares... EXCEPTO el 2 
+	if(numeroIngresado%2==1)
 	{
-		if(numeroIngresado%numeroAnterior==0)
+		// limite=numeroIngresado/2;
+		limite=Math.sqrt(numeroIngresado);
+		for(numeroAnterior=2;numeroAnterior<limite;numeroAnterior++)
 		{
-			break;
+			if(numeroIngresado%numeroAnterior==0)
+			{
+				break;
+			}
+	
 		}
-
+	}
+	else
+	{
+		if(numeroIngresado==2)//es primo
+		{
+			numeroAnterior=3;
+			limite=2;
+		}
+		//no es primo
+		numeroAnterior=2;
+		limite=3;
 	}
 
 
@@ -89,9 +105,10 @@ function mostrar()
 	{
 		mensaje=numeroIngresado+" no primo";
 	}
-	alert(mensaje)
+
 	console.log(mensaje);
 
+	*/
 
 
 
@@ -101,7 +118,6 @@ function mostrar()
 
 
 
-/*
 	
 	var numeroIngresado;
 	var numeroAnterior;
@@ -161,6 +177,6 @@ function mostrar()
 
 
 	
-*/
+
 
 }//FIN DE LA FUNCIÓN
