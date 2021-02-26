@@ -4,7 +4,8 @@ For 10 A-ingrese nombre , sexo , edad (validar que si es mujer debe ser adolesce
 
 For 10 B- necesitamos saber: el nombre y el sexo de la persona mas alta , --de las mujeres el nombre de la mas joven ,--de los hombre el nombre del mas bajito , ... solo si los hay
 
-20:30 a 21:30 (+T)
+20:30 a 21:53(+T)
+tercer intento...
 For 10 el promedio de edad entre los hombre ,
 el promedio de edad entre las mujeres, 
 la cantidad de personas que miden mas de 1,60 metros, 
@@ -26,10 +27,8 @@ function mostrar()
 	var sexoDelMasAlto;
 	var personaMasAlta;
 	var nombreMujerMasJoven;
-	var banderaMujerMasJoven;
 	var edadMujerMasJoven;
 	var nombreHombreMasBajo;
-	var banderaHombreMasBajo;
 	var alturaHombreMasBajo;
 	//punot c
 	var sumatoriaEdadMujeres;
@@ -47,8 +46,6 @@ function mostrar()
 	var mensaje;
 
 	banderaMasAlto=true;
-	banderaMujerMasJoven=true;
-	banderaHombreMasBajo=true;
 
 	//punto c
 	sumatoriaEdadMujeres=0;
@@ -101,18 +98,18 @@ function mostrar()
 				edad=prompt("Error, ingrese la edad: ");
 				edad=parseInt(edad);
 			}
-			if(banderaMujerMasJoven==true || edad<edadMujerMasJoven)
+
+			if(cantidadMujeres==0 || edad<edadMujerMasJoven)
 			{
-				banderaMujerMasJoven=false;
 				nombreMujerMasJoven=nombre;
 				edadMujerMasJoven=edad;
 			}
-			sumatoriaEdadMujeres=sumatoriaEdadMujeres+edad;
-			cantidadMujeres++;
 			if(altura>1.6)
 			{
 				cantidadMujeresMasUnoSesenta++;
 			}
+			sumatoriaEdadMujeres=sumatoriaEdadMujeres+edad;
+			cantidadMujeres++;
 		}
 		else//sexo=='masculino'
 		{
@@ -121,9 +118,9 @@ function mostrar()
 				edad=prompt("Error, ingrese la edad: ");
 				edad=parseInt(edad);
 			}
-			if(banderaHombreMasBajo==true || altura<alturaHombreMasBajo)
+
+			if(cantidadHombres==0 || altura<alturaHombreMasBajo)
 			{
-				banderaHombreMasBajo=false;
 				nombreHombreMasBajo=nombre;
 				alturaHombreMasBajo=altura;
 			}
@@ -136,7 +133,6 @@ function mostrar()
 		{
 			personaMasUnoSesenta++;
 		}
-	
 
 		if(banderaMasAlto==true || altura>personaMasAlta)
 		{
@@ -169,7 +165,7 @@ function mostrar()
 	alert(mensaje);
 
 	
-	if(banderaMujerMasJoven==false)
+	if(cantidadMujeres>0)
 	{
 		mensaje="La mujer más joven tiene "+edadMujerMasJoven+" años"+" y su nombre es "+nombreMujerMasJoven;
 		promedioMujeres=sumatoriaEdadMujeres/cantidadMujeres;
@@ -182,7 +178,7 @@ function mostrar()
 	}
 	alert(mensaje);
 
-	if(banderaHombreMasBajo==false)
+	if(cantidadHombres>0)
 	{
 		mensaje="El hombre más bajo mide "+alturaHombreMasBajo+" metros y su nombre es "+nombreHombreMasBajo;
 		promedioHombres=sumatoriaEdadHombres/cantidadHombres;
@@ -195,8 +191,15 @@ function mostrar()
 	alert(mensaje);
 
 	mensaje="La cantidad de personas que miden más de 1.6 es "+personaMasUnoSesenta;
-	porcentajeMujeresMasUnoSesenta=(100*cantidadMujeresMasUnoSesenta)/(cantidadMujeres+cantidadHombres);
-	mensaje=mensaje+"  -  el porcentaje de mujeres mayores de 1.6metros es "+porcentajeMujeresMasUnoSesenta+"%";
+	if(personaMasUnoSesenta>0)
+	{
+		porcentajeMujeresMasUnoSesenta=(100*cantidadMujeresMasUnoSesenta)/(personaMasUnoSesenta);
+		mensaje=mensaje+"  -  el porcentaje de mujeres mayores de 1.6metros es "+porcentajeMujeresMasUnoSesenta+"%";
+	}
+	else
+	{
+		mensaje=mensaje+"   -  no se puede hacer promedio porque no hay personas más de 1.6metros";
+	}
 	alert(mensaje);
 
 
@@ -233,7 +236,7 @@ function mostrar()
 
 	El hombre más bajo mide 2.5 metros y su nombre es agustin  -  El promedio de edad de los hombres es 9 años
 
-	La cantidad de personas que miden más de 1.6 es 3  -  el porcentaje de mujeres mayores de 1.6metros es 25%
+	La cantidad de personas que miden más de 1.6 es 3  -  el porcentaje de mujeres mayores de 1.6metros es 33.333333333333336%
 
 	*/
 
