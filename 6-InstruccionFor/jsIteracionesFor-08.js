@@ -4,7 +4,7 @@ For 10 A-ingrese nombre , sexo , edad (validar que si es mujer debe ser adolesce
 
 For 10 B- necesitamos saber: el nombre y el sexo de la persona mas alta , --de las mujeres el nombre de la mas joven ,--de los hombre el nombre del mas bajito , ... solo si los hay
 
-20:30
+20:30 a 21:30 (+T)
 For 10 el promedio de edad entre los hombre ,
 el promedio de edad entre las mujeres, 
 la cantidad de personas que miden mas de 1,60 metros, 
@@ -40,7 +40,8 @@ function mostrar()
 	var promedioHombres;
 	var sumatoriaEdadMujeresMasUnoSesenta;
 	var cantidadMujeresMasUnoSesenta;
-	var promedioMujeresMasUnoSesenta;
+	var porcentajeMujeresMasUnoSesenta;
+	var personaMasUnoSesenta;
 	//impresión
 	var mensaje;
 	var mensaje;
@@ -56,7 +57,7 @@ function mostrar()
 	cantidadHombres=0;
 	sumatoriaEdadMujeresMasUnoSesenta=0;
 	cantidadMujeresMasUnoSesenta=0;
-
+	personaMasUnoSesenta=0;
 
 	for(;;)
 	{
@@ -130,6 +131,11 @@ function mostrar()
 			cantidadHombres++;
 
 		}//fin if(sexo=='f')
+
+		if(altura>1.6)
+		{
+			personaMasUnoSesenta++;
+		}
 	
 
 		if(banderaMasAlto==true || altura>personaMasAlta)
@@ -162,13 +168,13 @@ function mostrar()
 	mensaje="La persona más alta se llama: "+nombreMasAlto+", y su sexo es "+sexoDelMasAlto+", mide "+personaMasAlta+" metros";
 	alert(mensaje);
 
+	
 	if(banderaMujerMasJoven==false)
 	{
 		mensaje="La mujer más joven tiene "+edadMujerMasJoven+" años"+" y su nombre es "+nombreMujerMasJoven;
 		promedioMujeres=sumatoriaEdadMujeres/cantidadMujeres;
 		mensaje=mensaje+"   -   El promedio de edad de TODAS las mujeres es "+promedioMujeres+" años";
-		porcentajeMujeresMasUnoSesenta=(100*cantidadMujeresMasUnoSesenta)/(cantidadMujeres+cantidadHombres);
-		mensaje=mensaje+"    -  porcentaje de mujeres mayores de 1.6metros es "+porcentajeMujeresMasUnoSesenta+"%";
+
 	}
 	else
 	{
@@ -186,6 +192,11 @@ function mostrar()
 	{
 		mensaje="No se puede calcular el promedio de edades de los hombres porque no se ingresaron hombres";
 	}
+	alert(mensaje);
+
+	mensaje="La cantidad de personas que miden más de 1.6 es "+personaMasUnoSesenta;
+	porcentajeMujeresMasUnoSesenta=(100*cantidadMujeresMasUnoSesenta)/(cantidadMujeres+cantidadHombres);
+	mensaje=mensaje+"  -  el porcentaje de mujeres mayores de 1.6metros es "+porcentajeMujeresMasUnoSesenta+"%";
 	alert(mensaje);
 
 
@@ -218,9 +229,11 @@ function mostrar()
 
 	La persona más alta se llama: martin, y su sexo es masculino, mide 2.7 metros
 
-	La mujer más joven tiene 15 años y su nombre es florencia   -   El promedio de edad de TODAS las mujeres es 16 años    -  porcentaje de mujeres mayores de 1.6metros es 25%
+	La mujer más joven tiene 15 años y su nombre es florencia   -   El promedio de edad de TODAS las mujeres es 16 años
 
 	El hombre más bajo mide 2.5 metros y su nombre es agustin  -  El promedio de edad de los hombres es 9 años
+
+	La cantidad de personas que miden más de 1.6 es 3  -  el porcentaje de mujeres mayores de 1.6metros es 25%
 
 	*/
 
