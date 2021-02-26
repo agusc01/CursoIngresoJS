@@ -4,6 +4,12 @@ For 10 A-ingrese nombre , sexo , edad (validar que si es mujer debe ser adolesce
 
 For 10 B- necesitamos saber: el nombre y el sexo de la persona mas alta , --de las mujeres el nombre de la mas joven ,--de los hombre el nombre del mas bajito , ... solo si los hay
 
+20:30
+For 10 el promedio de edad entre los hombre ,
+el promedio de edad entre las mujeres, 
+la cantidad de personas que miden mas de 1,60 metros, 
+y el porcentaje de mujeres sobre el total de personas de mas de 1,60 mts
+
 */
 
 function mostrar()
@@ -25,11 +31,31 @@ function mostrar()
 	var nombreHombreMasBajo;
 	var banderaHombreMasBajo;
 	var alturaHombreMasBajo;
+	//punot c
+	var sumatoriaEdadMujeres;
+	var cantidadMujeres;
+	var sumatoriaEdadHombres;
+	var cantidadHombres;
+	var promedioMujeres;
+	var promedioHombres;
+	var sumatoriaEdadMujeresMasUnoSesenta;
+	var cantidadMujeresMasUnoSesenta;
+	var promedioMujeresMasUnoSesenta;
+	//impresión
+	var mensaje;
 	var mensaje;
 
 	banderaMasAlto=true;
 	banderaMujerMasJoven=true;
 	banderaHombreMasBajo=true;
+
+	//punto c
+	sumatoriaEdadMujeres=0;
+	cantidadMujeres=0;
+	sumatoriaEdadHombres=0;
+	cantidadHombres=0;
+	sumatoriaEdadMujeresMasUnoSesenta=0;
+	cantidadMujeresMasUnoSesenta=0;
 
 
 	for(;;)
@@ -68,7 +94,7 @@ function mostrar()
 		edad=parseInt(edad);
 		if(sexo=='femenino')
 		{
-			while(isNaN(edad)==true || (edad<12 || edad>18))
+			while(isNaN(edad)==true || (edad<13 || edad>17))
 			{
 	
 				edad=prompt("Error, ingrese la edad: ");
@@ -80,10 +106,16 @@ function mostrar()
 				nombreMujerMasJoven=nombre;
 				edadMujerMasJoven=edad;
 			}
+			sumatoriaEdadMujeres=sumatoriaEdadMujeres+edad;
+			cantidadMujeres++;
+			if(altura>1.6)
+			{
+				cantidadMujeresMasUnoSesenta++;
+			}
 		}
 		else//sexo=='masculino'
 		{
-			while(isNaN(edad)==true || edad>13)
+			while(isNaN(edad)==true || (edad<0 || edad>12))
 			{
 				edad=prompt("Error, ingrese la edad: ");
 				edad=parseInt(edad);
@@ -94,6 +126,8 @@ function mostrar()
 				nombreHombreMasBajo=nombre;
 				alturaHombreMasBajo=altura;
 			}
+			sumatoriaEdadHombres=sumatoriaEdadHombres+edad;
+			cantidadHombres++;
 
 		}//fin if(sexo=='f')
 	
@@ -117,28 +151,44 @@ function mostrar()
 
 	/*For 10 B- necesitamos saber: el nombre y el sexo de la persona mas alta , --de las mujeres el nombre de la mas joven ,--de los hombre el nombre del mas bajito , ... solo si los hay*/
 
-	mensaje="La persona más alta se llama: "+nombre+", y su sexo es "+sexo+", mide "+personaMasAlta+" metros";
+	/*
+	20:30
+	For 10 el promedio de edad entre los hombre ,
+	el promedio de edad entre las mujeres, 
+	la cantidad de personas que miden mas de 1,60 metros, 
+	y el porcentaje de mujeres sobre el total de personas de mas de 1,60 mts
+	*/
+
+	mensaje="La persona más alta se llama: "+nombreMasAlto+", y su sexo es "+sexoDelMasAlto+", mide "+personaMasAlta+" metros";
 	alert(mensaje);
 
 	if(banderaMujerMasJoven==false)
 	{
 		mensaje="La mujer más joven tiene "+edadMujerMasJoven+" años"+" y su nombre es "+nombreMujerMasJoven;
+		promedioMujeres=sumatoriaEdadMujeres/cantidadMujeres;
+		mensaje=mensaje+"   -   El promedio de edad de TODAS las mujeres es "+promedioMujeres+" años";
+		porcentajeMujeresMasUnoSesenta=(100*cantidadMujeresMasUnoSesenta)/(cantidadMujeres+cantidadHombres);
+		mensaje=mensaje+"    -  porcentaje de mujeres mayores de 1.6metros es "+porcentajeMujeresMasUnoSesenta+"%";
 	}
 	else
 	{
-		mensaje="No se ingresaron mujeres";
+		mensaje="No se puede calcular el promedio de edades de los hombres porque no se ingresaron mujeres";
 	}
 	alert(mensaje);
 
 	if(banderaHombreMasBajo==false)
 	{
 		mensaje="El hombre más bajo mide "+alturaHombreMasBajo+" metros y su nombre es "+nombreHombreMasBajo;
+		promedioHombres=sumatoriaEdadHombres/cantidadHombres;
+		mensaje=mensaje+"  -  El promedio de edad de los hombres es "+promedioHombres+" años";
 	}
 	else
 	{
-		mensaje="No se ingresaron hombres";
+		mensaje="No se puede calcular el promedio de edades de los hombres porque no se ingresaron hombres";
 	}
 	alert(mensaje);
+
+
 
 	/*
 	TEST
@@ -149,13 +199,13 @@ function mostrar()
 	10 edad
 
 	florencia
-	2.4 altura
+	1.2 altura
 	40 temperatura
 	femenino
 	15 edad
 
 	mayra
-	2.1 altura
+	1.7 altura
 	34 temperatura
 	femenino
 	17 edad
@@ -167,10 +217,10 @@ function mostrar()
 	8
 
 	La persona más alta se llama: martin, y su sexo es masculino, mide 2.7 metros
-	
-	La mujer más joven tiene 15 años y su nombre es florencia
 
-	El hombre más bajo mide 2.5 metros y su nombre es agustin
+	La mujer más joven tiene 15 años y su nombre es florencia   -   El promedio de edad de TODAS las mujeres es 16 años    -  porcentaje de mujeres mayores de 1.6metros es 25%
+
+	El hombre más bajo mide 2.5 metros y su nombre es agustin  -  El promedio de edad de los hombres es 9 años
 
 	*/
 
