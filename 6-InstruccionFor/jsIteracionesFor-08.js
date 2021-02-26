@@ -1,4 +1,17 @@
 /*
+parte A
+16:00
+16:10
+
+parte B
+16:10
+16:30
+
+parte C
+16:30
+16:50
+
+
 Alumno: Cacciatori, Agustín
 For 10 A-ingrese nombre , sexo , edad (validar que si es mujer debe ser adolescente y si el hombre debe ser niño), altura (validar), temperatura corporal
 
@@ -6,7 +19,7 @@ For 10 B- necesitamos saber: el nombre y el sexo de la persona mas alta , --de l
 
 20:30 a 21:53(+T)
 tercer intento...
-For 10 el promedio de edad entre los hombre ,
+For 10 C- el promedio de edad entre los hombre ,
 el promedio de edad entre las mujeres, 
 la cantidad de personas que miden mas de 1,60 metros, 
 y el porcentaje de mujeres sobre el total de personas de mas de 1,60 mts
@@ -15,230 +28,224 @@ y el porcentaje de mujeres sobre el total de personas de mas de 1,60 mts
 
 function mostrar()
 {
-	var nombre;
-	var sexo;
-	var edad;
+	//creación de variables
+	var respuesta; 
+	var nombreIngresado;
+	var sexoIngresado;
 	var altura;
 	var temperatura;
-	var respuestaDeCorte;
-	//punto B
-	var banderaMasAlto;
-	var nombreMasAlto;
+	//para imprimir mensajes
+	var mensaje;
+	//punto B (el nombre y el sexo de la persona mas alta)
+	var banderaDelMasAlto;
+	var alturaDelMasAlto;
+	var nombreDelMasAlto;
 	var sexoDelMasAlto;
-	var personaMasAlta;
-	var nombreMujerMasJoven;
+	//punto B (de las mujeres el nombre de la mas joven, solo si los hay)
+	// var banderaMujerMasJoven;
 	var edadMujerMasJoven;
-	var nombreHombreMasBajo;
-	var alturaHombreMasBajo;
-	//punot c
-	var sumatoriaEdadMujeres;
-	var cantidadMujeres;
+	var nombreMujerMasJoven;
+	//punto B (de los hombre el nombre del mas bajito , ... solo si los hay)
+	// var banderaHombreMasBajito;
+	var alturaHombreMasBajito;
+	var nombreHombreMasBajito;
+	//punto C  el promedio de edad entre los hombre ,
+	var contadorHombres;
 	var sumatoriaEdadHombres;
-	var cantidadHombres;
-	var promedioMujeres;
-	var promedioHombres;
-	var sumatoriaEdadMujeresMasUnoSesenta;
-	var cantidadMujeresMasUnoSesenta;
-	var porcentajeMujeresMasUnoSesenta;
-	var personaMasUnoSesenta;
-	//impresión
-	var mensaje;
-	var mensaje;
+	var promedioEdadHombres;
+	//punto C el promedio de edad entre las mujeres
+	var contadorMujeres;
+	var sumatoriaEdadMujeres;
+	var promedioEdadMujeres;
+	//punto C la cantidad de personas que miden mas de 1,60 metros
+	var cantidadPersonasMidenMasUnoSesenta;
+	//punto C el porcentaje de mujeres sobre el total de personas de mas de 1,60 mts
+	var cantidadMuejeresMidenMasUnoSensenta;
+	var porcentajeMujeresMidenMasUnoSensenta;
 
-	banderaMasAlto=true;
 
-	//punto c
-	sumatoriaEdadMujeres=0;
-	cantidadMujeres=0;
+	//inicialización
+	//para el for
+	respuesta='si'; //muy importante para que entre al primer ciclo del for
+	//punto B
+	banderaDelMasAlto=true;	
+	//punto B (de las mujeres el nombre de la mas joven, solo si los hay)
+	// banderaMujerMasJoven=true;
+	//punto B (de los hombre el nombre del mas bajito , ... solo si los hay)
+	// banderaHombreMasBajito=true;
+	//punto C  el promedio de edad entre los hombre ,
+	contadorHombres=0;
 	sumatoriaEdadHombres=0;
-	cantidadHombres=0;
-	sumatoriaEdadMujeresMasUnoSesenta=0;
-	cantidadMujeresMasUnoSesenta=0;
-	personaMasUnoSesenta=0;
+	//punto C el promedio de edad entre las mujeres
+	contadorMujeres=0;
+	sumatoriaEdadMujeres=0;
+	//punto C la cantidad de personas que miden mas de 1,60 metros
+	cantidadPersonasMidenMasUnoSesenta=0;
 
-	for(;;)
+
+
+
+
+	for(;respuesta=='si';)
 	{
 		
-		nombre=prompt("Ingrese el nombre: ");
-		while(isNaN(nombre)==false)
+		nombreIngresado=prompt("Ingrese su nombre: ");
+		while(isNaN(nombreIngresado)==false)
 		{
-			nombre=prompt("Error, ingrese el nombre: ");
-		}
-		
-		altura=prompt("Ingrese la altura: ");
-		altura=parseFloat(altura);
-		while(isNaN(altura)==true || altura<0.5 || altura>3)
-		{
-			altura=prompt("Error, Ingrese la altura: ");
-			altura=parseFloat(altura);
+			nombreIngresado=prompt("Error, ingrese su nombre: ");	
 		}
 
-		temperatura=prompt("Ingrese la temperatura: ");
+		/*
+		temperatura=prompt("Ingrese su temperatura: (34 a 40°C)");
 		temperatura=parseFloat(temperatura);
 		while(isNaN(temperatura)==true || temperatura<34 || temperatura>40)
 		{
-			temperatura=prompt("Error, Ingrese la temperatura: ");
+			temperatura=prompt("Error, ingrese su temperatura: (34 a 40°C)");
 			temperatura=parseFloat(temperatura);
+		}*/
+
+		altura=prompt("Ingrese su altura: 0.5 a 2.5 metros");
+		altura=parseFloat(altura);
+		while(isNaN(altura)==true || altura<0.5 || altura>2.5)
+		{
+			altura=prompt("Error, ingrese su altura: 0.5 a 2.5 metros");
+			altura=parseFloat(altura);
+		}
+
+		sexoIngresado=prompt("Ingrese su sexo (femenino | masculino) :");
+		while(isNaN(sexoIngresado)==false || (sexoIngresado!='femenino' && sexoIngresado!='masculino'))
+		{
+			sexoIngresado=prompt("Error, ingrese su sexo (femenino | masculino) :");
+		}
+
+		edadIngresada=prompt("Ingrese su edad: (mujer 13 a 17años) (hombre 1 a 12años)");
+		edadIngresada=parseInt(edadIngresada);
+		switch(sexoIngresado)
+		{
+			case 'femenino':
+				while(isNaN(edadIngresada)==true || edadIngresada<13 || edadIngresada>17)
+				{
+					edadIngresada=prompt("Error, ingrese su edad: (mujer 13 a 17años) (hombre 1 a 12años)");
+					edadIngresada=parseInt(edadIngresada);
+				}
+
+				//punto B (de las mujeres el nombre de la mas joven, solo si los hay)
+				// if(banderaMujerMasJoven==true || edad<edadMujerMasJoven)
+				if(contadorMujeres==0 || edad<edadMujerMasJoven)
+				{
+					// banderaMujerMasJoven=false;
+					edadMujerMasJoven=edad;
+					nombreMujerMasJoven=nombre;
+				}
+
+				//punto C el promedio de edad entre las mujeres
+				contadorMujeres++;
+				sumatoriaEdadMujeres=sumatoriaEdadMujeres+edad;
+				if(altura>1.6)
+				{
+					cantidadMuejeresMidenMasUnoSensenta++;
+				}
+				
+
+				break;//fin case 'femenino'
+			// case 'masculino':
+			default:
+				while(isNaN(edadIngresada)==true || edadIngresada<1 || edadIngresada>12)
+				{
+					edadIngresada=prompt("Error, ingrese su edad: (mujer 13 a 17años) (hombre 1 a 12años)");
+					edadIngresada=parseInt(edadIngresada);
+				}
+
+				//punto B (de los hombre el nombre del mas bajito , ... solo si los hay)
+				// if(banderaHombreMasBajito==true || altura<alturaHombreMasBajito)
+				if(contadorHombres==0 || altura<alturaHombreMasBajito)
+				{
+					// banderaHombreMasBajito=false;
+					alturaHombreMasBajito=altura;
+					nombreHombreMasBajito=nombre;
+				}
+
+				//punto C  el promedio de edad entre los hombre ,
+				contadorHombres++;
+				sumatoriaEdadHombres=sumatoriaEdadHombres+edad;
+
+				break;//fin case 'masculino'
+		}//switch(sexoIngresado)
+
+		//punto B (el nombre y el sexo de la persona mas alta)
+		if(banderaDelMasAlto==true || altura>alturaDelMasAlto)
+		{
+			banderaDelMasAlto=false;
+			alturaDelMasAlto=altura;
+			nombreDelMasAlto=nombre;
+			sexoDelMasAlto=sexo;
 		}
 
 
-		sexo=prompt("Ingrese el sexo: ('femenino' o 'masculino') ");
-		while(isNaN(sexo)==false || (sexo!='femenino' && sexo!='masculino'))
-		{
-			sexo=prompt("Error, ingrese el sexo: ");
-		}
-		
-		edad=prompt("Ingrese la edad: ");
-		edad=parseInt(edad);
-		if(sexo=='femenino')
-		{
-			while(isNaN(edad)==true || (edad<13 || edad>17))
-			{
-	
-				edad=prompt("Error, ingrese la edad: ");
-				edad=parseInt(edad);
-			}
-
-			if(cantidadMujeres==0 || edad<edadMujerMasJoven)
-			{
-				nombreMujerMasJoven=nombre;
-				edadMujerMasJoven=edad;
-			}
-			if(altura>1.6)
-			{
-				cantidadMujeresMasUnoSesenta++;
-			}
-			sumatoriaEdadMujeres=sumatoriaEdadMujeres+edad;
-			cantidadMujeres++;
-		}
-		else//sexo=='masculino'
-		{
-			while(isNaN(edad)==true || (edad<0 || edad>12))
-			{
-				edad=prompt("Error, ingrese la edad: ");
-				edad=parseInt(edad);
-			}
-
-			if(cantidadHombres==0 || altura<alturaHombreMasBajo)
-			{
-				nombreHombreMasBajo=nombre;
-				alturaHombreMasBajo=altura;
-			}
-			sumatoriaEdadHombres=sumatoriaEdadHombres+edad;
-			cantidadHombres++;
-
-		}//fin if(sexo=='f')
-
+		//punto C la cantidad de personas que miden mas de 1,60 metros
 		if(altura>1.6)
 		{
-			personaMasUnoSesenta++;
-		}
-
-		if(banderaMasAlto==true || altura>personaMasAlta)
-		{
-			banderaMasAlto=false;
-			nombreMasAlto=nombre;
-			sexoDelMasAlto=sexo;
-			personaMasAlta=altura;
+			cantidadPersonasMidenMasUnoSesenta++;
 		}
 
 
-		respuestaDeCorte=prompt("Si quiere seguir ingresar 'si' ");
-		if(respuestaDeCorte!='si')
-		{
-			break;
-		}
+		respuesta=prompt("Si quiere seguir tipear 'si' ");//último renglón del for 
+	}//for(;respuesta=='si';)
 
-	}//fin for(;respuestaDeCorte='si';)
 
-	/*For 10 B- necesitamos saber: el nombre y el sexo de la persona mas alta , --de las mujeres el nombre de la mas joven ,--de los hombre el nombre del mas bajito , ... solo si los hay*/
-
-	/*
-	20:30
-	For 10 el promedio de edad entre los hombre ,
-	el promedio de edad entre las mujeres, 
-	la cantidad de personas que miden mas de 1,60 metros, 
-	y el porcentaje de mujeres sobre el total de personas de mas de 1,60 mts
-	*/
-
-	mensaje="La persona más alta se llama: "+nombreMasAlto+", y su sexo es "+sexoDelMasAlto+", mide "+personaMasAlta+" metros";
+	//punto B (el nombre y el sexo de la persona mas alta)
+	mensaje="La persona mas alta mide "+alturaDelMasAlto+" metros, se llama "+nombreDelMasAlto+" y su sexo es "+sexoDelMasAlto;
 	alert(mensaje);
+
 
 	
-	if(cantidadMujeres>0)
+	// if(banderaMujerMasJoven==false)
+	if(contadorMujeres!=0)
 	{
-		mensaje="La mujer más joven tiene "+edadMujerMasJoven+" años"+" y su nombre es "+nombreMujerMasJoven;
-		promedioMujeres=sumatoriaEdadMujeres/cantidadMujeres;
-		mensaje=mensaje+"   -   El promedio de edad de TODAS las mujeres es "+promedioMujeres+" años";
-
+		//punto B (de las mujeres el nombre de la mas joven, solo si los hay)
+		mensaje="La mujer más joven tiene "+edadMujerMasJoven+" años y se llama "+nombreMujerMasJoven;
+		//punto C el promedio de edad entre las mujeres
+		promedioEdadMujeres=sumatoriaEdadMujeres/contadorMujeres;
+		mensaje=mensaje+"   -   El promedio de edad en las mujeres es : "+promedioEdadMujeres;
 	}
 	else
 	{
-		mensaje="No se puede calcular el promedio de edades de los hombres porque no se ingresaron mujeres";
-	}
-	alert(mensaje);
-
-	if(cantidadHombres>0)
-	{
-		mensaje="El hombre más bajo mide "+alturaHombreMasBajo+" metros y su nombre es "+nombreHombreMasBajo;
-		promedioHombres=sumatoriaEdadHombres/cantidadHombres;
-		mensaje=mensaje+"  -  El promedio de edad de los hombres es "+promedioHombres+" años";
-	}
-	else
-	{
-		mensaje="No se puede calcular el promedio de edades de los hombres porque no se ingresaron hombres";
-	}
-	alert(mensaje);
-
-	mensaje="La cantidad de personas que miden más de 1.6 es "+personaMasUnoSesenta;
-	if(personaMasUnoSesenta>0)
-	{
-		porcentajeMujeresMasUnoSesenta=(100*cantidadMujeresMasUnoSesenta)/(personaMasUnoSesenta);
-		mensaje=mensaje+"  -  el porcentaje de mujeres mayores de 1.6metros es "+porcentajeMujeresMasUnoSesenta+"%";
-	}
-	else
-	{
-		mensaje=mensaje+"   -  no se puede hacer promedio porque no hay personas más de 1.6metros";
+		mensaje="No se ingresaron mujeres";
 	}
 	alert(mensaje);
 
 
+	
+	// if(banderaHombreMasBajito==false)
+	if(contadorHombres!=0)
+	{
+		//punto B (de los hombre el nombre del mas bajito , ... solo si los hay)
+		mensaje=nombreHombreMasBajito+" es el hombre más bajito, mide "+alturaHombreMasBajito+" metros";
+		//punto C el promedio de edad entre las hombres
+		promedioEdadHombres=sumatoriaEdadHombres/contadorHombres;
+		mensaje=mensaje+"   -  El promedio de edad en los hombres es : "+promedioEdadHombres;
+	}
+	else
+	{
+		mensaje="No se ingresaron hombres";
+	}
+	alert(mensaje);
 
-	/*
-	TEST
-	agustin
-	2.5 altura
-	35 temperatura
-	masculino
-	10 edad
 
-	florencia
-	1.2 altura
-	40 temperatura
-	femenino
-	15 edad
-
-	mayra
-	1.7 altura
-	34 temperatura
-	femenino
-	17 edad
-
-	martin
-	2.7
-	38
-	masculino
-	8
-
-	La persona más alta se llama: martin, y su sexo es masculino, mide 2.7 metros
-
-	La mujer más joven tiene 15 años y su nombre es florencia   -   El promedio de edad de TODAS las mujeres es 16 años
-
-	El hombre más bajo mide 2.5 metros y su nombre es agustin  -  El promedio de edad de los hombres es 9 años
-
-	La cantidad de personas que miden más de 1.6 es 3  -  el porcentaje de mujeres mayores de 1.6metros es 33.333333333333336%
-
-	*/
-
+	
+	if(cantidadPersonasMidenMasUnoSesenta!=0)
+	{
+		//punto C la cantidad de personas que miden mas de 1,60 metros
+		mensaje="La cantidad de personas que miden más de 1.6 metros es "+cantidadPersonasMidenMasUnoSesenta;
+		mensaje
+		//punto C el porcentaje de mujeres sobre el total de personas de mas de 1,60 mts
+		porcentajeMujeresMidenMasUnoSensenta=(cantidadMuejeresMidenMasUnoSensenta*100)/cantidadPersonasMidenMasUnoSesenta;
+		mensaje="El porcentaje de mujeres sobre el total de personas de mas de 1.6 metros es:"
+	}
+	else
+	{
+		mensaje="No se ingresaron personas que midan más de 1.6 metros"
+	}
+	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN
