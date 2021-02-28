@@ -220,9 +220,9 @@ function mostrar()
                 // e)Que tipo de mascota(gato o un perrro u "otra cosa") que tiene el mayor promedio de temperatura corporal
                 sumatoriaTemperaturaOtraCosa=sumatoriaTemperaturaOtraCosa+temperaturaIngresada;
                 contadorOtraCosA++
-
+                
                 break;//fin default://otro cosa
-        }
+            }
 
 
         // d)El animal sin pelo con menor temperatura corporal
@@ -276,14 +276,27 @@ function mostrar()
 
 
     // a)El perro mas pesado
-    mensaje="El perro mas pesado se llama "+nombrePerroMasPesado+", tiene un peso de "+pesoPerroMasPesado;
+    if(contadorPerro!=0)
+    {
+        mensaje="El perro mas pesado se llama "+nombrePerroMasPesado+", tiene un peso de "+pesoPerroMasPesado;
+    }
+    else
+    {
+        mensaje="No se ingresaron perros";
+    }
     alert(mensaje);
 
     // b)El porcentaje de enfermos sobre el total de mascotas
     //siempre hay almenos UNA mascota
-    porcentajeMascotasEnfermas=(contadorMascotasEnfermas*100)/contadorMascotas;
-    mensaje="El porcentaje de enfermos sobre el total de mascotas es "+porcentajeMascotasEnfermas;
-
+    if(contadorMascotasEnfermas!=0)
+    {
+        porcentajeMascotasEnfermas=(contadorMascotasEnfermas*100)/contadorMascotas;
+        mensaje="El porcentaje de enfermos sobre el total de mascotas es "+porcentajeMascotasEnfermas;
+    }
+    else
+    {
+        mensaje="No se ingresaron mascotas enfermas";
+    }
     alert(mensaje);
 
     
@@ -298,12 +311,12 @@ function mostrar()
         }
         else
         {
-            mensaje=mensaje+"    -   NO se ingresaron gatos sin pelo."
+            mensaje=mensaje+"    -   NO se ingresaron gatos sin pelo.";
         }
     }
     else
     {
-        mensaje="No se puede ingresaron mascoas sin pelo "
+        mensaje="No se puede ingresaron mascoas sin pelo ";
     }
     //IMPORTANTE este mensaje imprime resultados de punto D y I
     alert(mensaje);
@@ -318,7 +331,8 @@ function mostrar()
     }
     else
     {
-        mensaje="Ne ingresaron mascotas de tipo 'otra cosa'"
+        promedioTemperaturaOtraCosa=0;
+        mensaje="Ne ingresaron mascotas de tipo 'otra cosa'";
     }
 
 
@@ -327,9 +341,17 @@ function mostrar()
     {
         promedioTemperaturaGato=sumatoriaTemperaturaGato/contadorGato;
     }
+    else
+    {
+        promedioTemperaturaGato=0;
+    }
     if(contadorPerro!=0)
     {
         promedioTemperaturaPerro=sumatoriaTemperaturaPerro/contadorPerro;
+    }
+    else
+    {
+        promedioTemperaturaPerro=0;
     }
     //mirar arriba para el promedioTemperaturaOtraCosa=sumatoriaTemperaturaOtraCosa/contadorOtraCosA; en el punto C
     //SIGO CON // e)Que tipo de mascota(gato o un perrro u "otra cosa") que tiene el mayor promedio de temperatura corporal
@@ -357,7 +379,7 @@ function mostrar()
 
     
     // f)Sumando gatos y perros que porcentaje del total de mascotas son?
-    if(contadorPerro!=0 || contadorPerro!=0)
+    if(contadorPerro!=0 || contadorGato!=0)
     {
         porcentajeGatosYPerros=(contadorGato+contadorOtraCosA)*100/(contadorGato+contadorPerro+contadorOtraCosA);
         mensaje="Sumando gatos y perros que porcentaje del total de mascotas "+porcentajeGatosYPerros+"%";
