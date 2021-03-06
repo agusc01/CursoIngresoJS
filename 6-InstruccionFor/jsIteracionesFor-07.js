@@ -1,21 +1,34 @@
+/*
+Alumno: Cacciatori, Agustín
+7)
+Enunciado:
+al presionar el botón pedir un número. mostrar los numeros divisores desde el 1 al número ingresado, y mostrar la cantidad de numeros divisores encontrados.
+*/
+
 function mostrar()
 {
 	var numeroIngresado;
 	var cantidadDivisores;
-	cantidadDivisores=0;
+	var contador;
 
+	cantidadDivisores=0;
 
 	numeroIngresado=prompt("Ingrese un número mayor a 1");
 	numeroIngresado=parseInt(numeroIngresado);
-
-
-	for(var i=1;i<=numeroIngresado;i++)
+	while(isNaN(numeroIngresado)==true || numeroIngresado<1)
 	{
-		if(numeroIngresado%i==0) // es número par
+		numeroIngresado=prompt("Error, ingrese un número mayor a 1");
+		numeroIngresado=parseInt(numeroIngresado);
+	}
+
+
+	for(contador=1;contador<=numeroIngresado;contador++)
+	{
+		if(numeroIngresado%contador==0) 
 		{
 			cantidadDivisores++;
-			console.log(i);
-			alert(i);
+			console.log(contador);
+			// alert(contador);
 		}
 	}
 
