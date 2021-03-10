@@ -118,28 +118,6 @@ function mostrar()
             cantidadDeHabitantes=parseInt(cantidadDeHabitantes);
         }
 
-
-
-        nivelDeProbresa=prompt("Ingrese el nivel de pobresa entre (pobre, rico , muy rico), recordar que en Europa no hay paises pobre");
-        //el nivel de pobresa entre (pobre, rico , muy rico) en europa no hay paises pobre(validar)   
-        switch(continente)
-        {
-            case 'europa':
-                while(isNaN(nivelDeProbresa)==false || (nivelDeProbresa!="rico" && nivelDeProbresa!="muy rico"))
-                {
-                    nivelDeProbresa=prompt("Error, ingrese el nivel de pobresa entre (rico , muy rico): ");
-                }
-                break;
-
-            default:
-                while(isNaN(nivelDeProbresa)==false || (nivelDeProbresa!="pobre" && nivelDeProbresa!="rico" && nivelDeProbresa!="muy rico"))
-                {
-                    nivelDeProbresa=prompt("Error, ingrese el nivel de pobresa entre (pobre, rico , muy rico): ");
-                }
-                break;
-
-        }
-
         //la temperaruta mínima que se registra en su territorio(entre -50 y 50)  
         temperaturaIngresada=prompt("Ingrese temperatura minima que se registra (-50 a 50): ");
         temperaturaIngresada=parseFloat(temperaturaIngresada);
@@ -149,19 +127,81 @@ function mostrar()
             temperaturaIngresada=parseFloat(temperaturaIngresada);
         }
 
+
+        nivelDeProbresa=prompt("Ingrese el nivel de pobresa entre (pobre, rico , muy rico), recordar que en Europa no hay paises pobre");
+        //el nivel de pobresa entre (pobre, rico , muy rico) en europa no hay paises pobre(validar)   
+        switch(continente)
+        {
+            case 'europa':
+
+                // b)la cantidad de temperaturas impares de europa
+                if(temperaturaIngresada%2==1)
+                {
+                    cantidadTemperaturasImparesEuropa++;
+                }
+
+                // i) que continente tiene mas habitantes.
+                habitantesEuropa=habitantesEuropa+cantidadDeHabitantes;
+
+                //el nivel de pobresa entre (pobre, rico , muy rico) en europa no hay paises pobre(validar) 
+                while(isNaN(nivelDeProbresa)==false || (nivelDeProbresa!="rico" && nivelDeProbresa!="muy rico"))
+                {
+                    nivelDeProbresa=prompt("Error, ingrese el nivel de pobresa entre (rico , muy rico): ");
+                }
+                break;
+            case 'america':
+                // i) que continente tiene mas habitantes.
+                habitantesAmerica=habitantesAmerica+cantidadDeHabitantes;
+
+                //el nivel de pobresa entre (pobre, rico , muy rico) en europa no hay paises pobre(validar) 
+                while(isNaN(nivelDeProbresa)==false || (nivelDeProbresa!="pobre" && nivelDeProbresa!="rico" && nivelDeProbresa!="muy rico"))
+                {
+                    nivelDeProbresa=prompt("Error, ingrese el nivel de pobresa entre (pobre, rico , muy rico): ");
+                }
+
+                break;
+            case 'asia':
+                // i) que continente tiene mas habitantes.
+                habitantesAsia=habitantesAsia+cantidadDeHabitantes;
+
+                //el nivel de pobresa entre (pobre, rico , muy rico) en europa no hay paises pobre(validar) 
+                while(isNaN(nivelDeProbresa)==false || (nivelDeProbresa!="pobre" && nivelDeProbresa!="rico" && nivelDeProbresa!="muy rico"))
+                {
+                    nivelDeProbresa=prompt("Error, ingrese el nivel de pobresa entre (pobre, rico , muy rico): ");
+                }
+                break;
+            case 'africa':
+                // i) que continente tiene mas habitantes.
+                habitantesAfrica=habitantesAfrica+cantidadDeHabitantes;
+
+                //el nivel de pobresa entre (pobre, rico , muy rico) en europa no hay paises pobre(validar) 
+                while(isNaN(nivelDeProbresa)==false || (nivelDeProbresa!="pobre" && nivelDeProbresa!="rico" && nivelDeProbresa!="muy rico"))
+                {
+                    nivelDeProbresa=prompt("Error, ingrese el nivel de pobresa entre (pobre, rico , muy rico): ");
+                }
+                break;
+            // case 'Oceania':
+            default:
+                // i) que continente tiene mas habitantes.
+                habitantesOceania=habitantesOceania+cantidadDeHabitantes;
+
+                //el nivel de pobresa entre (pobre, rico , muy rico) en europa no hay paises pobre(validar) 
+                while(isNaN(nivelDeProbresa)==false || (nivelDeProbresa!="pobre" && nivelDeProbresa!="rico" && nivelDeProbresa!="muy rico"))
+                {
+                    nivelDeProbresa=prompt("Error, ingrese el nivel de pobresa entre (pobre, rico , muy rico): ");
+                }
+                break;
+        }
+        
+
+
+
         //a)La cantidad de temperaturas pares.
         if(temperaturaIngresada%2==0)
         {
             cantidadTemperaturasPares++;
         }
-        else//temperatura impar
-        {
-            // b)la cantidad de temperaturas impares de europa
-            if(continente=="europa")
-            {
-                cantidadTemperaturasImparesEuropa++;
-            }
-        }
+
 
         // c)El nombre del pais con menos habitantes
         //nota uso "contadorPaises" del punto F como bandera
@@ -202,27 +242,8 @@ function mostrar()
         contadorPaises++; // IMPORTANTISIMO QUE SEA LO ULTIMO EN EL WHILE 
 
 
-        // i) que continente tiene mas habitantes.
-        switch(continente)
-        {
-            case 'america':
-                habitantesAmerica++;
-                break;
-            case 'asia':
-                habitantesAsia++;
-                break;
-            case 'europa':
-                habitantesEuropa++;
-                break;
-            case 'africa':
-                habitantesAfrica++;
-                break;
-            // case 'Oceania':
-            default:
-                habitantesOceania++;
-                break;
-        }
         
+
         respuesta=prompt("Para seguir ingresar 'si' ");
 
     }//fin     while(respuesta=='si')
@@ -238,6 +259,7 @@ function mostrar()
 
     // c)El nombre del pais con menos habitantes
     //nota uso "contadorPaises" del punto F como bandera
+    //imprimo porque siempre habra al menos un país
     mensaje="El nombre del pais con menos habitantes es "+nombrePaisMenosHabitantes+" con una cantidad de "+habitantesPaisMenosHabitantes+" habitantes";
     alert(mensaje);
 
@@ -268,6 +290,7 @@ function mostrar()
 
     // H) la temperatura mínima ingresada, y nombre del pais que registro esa temperatura. 
     //nota uso "contadorPaises" del punto F como bandera
+    // imprimo porque siempre habra al menos un país
     mensaje="la temperatura mínima ingresada, y nombre del pais que registro esa temperatura. Temperatura: "+temperaturaMinimaDelPais+", País: "+nombreDelPaisConMenorTemperatura;
     alert(mensaje);
 
