@@ -1,19 +1,25 @@
-var miIntervalo ;
+/*
+Enunciado:
+al presionar el botón INICIAR se debe mostrar un mensaje de bienvenida "Bienvenidos a la UTN FRA" cada 3 segundos.
+al presionar el botón FINALIZAR se debe detener los mensajes.
+*/
 
-function inicio() {
+var miIntervalo;
+
+function inicio() 
+{
 	alert("function inicio.");
 	miIntervalo = setInterval(SegundosEnElAire, 3000);
 	
-}//FIN DE LA FUNCIÓN inicio
+}//fin function inicio
 
-function SegundosEnElAire() {
+function SegundosEnElAire()
+{
+    alert("Bienvenido a la UTN FRA");   
+}//fin function SegundosEnElAire
 
-    alert("Bienvenido a la UTN FRA");
-    
-}//FIN DE LA FUNCIÓN SegundosEnElAire
-
-function fin() {
+function fin()
+{
 	alert("function fin.");
 	clearTimeout(miIntervalo);
-
-}//FIN DE LA FUNCIÓN fin
+}//fin function fin

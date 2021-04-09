@@ -1,4 +1,13 @@
-var miTemporizador ;
+/*
+Enunciado:
+contuniando con el ejercicio anterior, sumandole los siguientes mensajes.
+*si Tardo entre 0 y 500 milisegundos :"Usted es Flash".
+*si Tardo entre 501 y 1000 milisegundos :"bien ahí, segui practicando".
+*si Tardo entre 1001 y 3000 milisegundos :"tenemos los deditos duros???".
+*si Tardo mas de 3000 milisegundos :"Te quedastes dormido???".
+*/
+
+var miTemporizador;
 var contador=0;
 var tiempoInicio;
 var tiempoFinal;
@@ -7,21 +16,20 @@ var tiempoFinal;
 function inicio()
 {
 	var random = Math.floor(Math.random()*10000 )+2000;
-	//alert(random);
+	alert(random);
 	alert("function inicio.");
 	miTemporizador = setTimeout(SegundosEnElAire, random);
 	
-}//FIN DE LA FUNCIÓN inicio
+}//fin function inicio
 
-function SegundosEnElAire() {
-
-
+function SegundosEnElAire()
+{
 	document.getElementById("secreto").style.visibility="visible"; 
  	tiempoInicio=  new Date();
  	tiempoInicio=tiempoInicio.getTime();
- 	//alert(tiempoInicio);
+ 	alert(tiempoInicio);
    
-}//FIN DE LA FUNCIÓN SegundosEnElAire
+}//fin function SegundosEnElAire
 
 function ContarMilisegundos()
 {
@@ -29,22 +37,21 @@ function ContarMilisegundos()
 	tiempoFinal=tiempoFinal.getTime();
 	resultado=tiempoFinal-tiempoInicio;
 
-		if(resultado<500)
-		{
-			alert("Usted es Flash: "+resultado);
-		}
-		else if(resultado<1000)
-		{
-			alert("bien ahí, segui practicando: "+resultado);	
-		}
-		else if(resultado<3000)
-		{
-			alert("tenemos los deditos duros???: "+resultado);
-		}
-		else
-		{
-			alert("Te quedastes dormido???: "+resultado);
-		}
+	if(resultado<500)
+	{
+		alert("Usted es Flash: "+resultado);
+	}
+	else if(resultado<1000)
+	{
+		alert("bien ahí, segui practicando: "+resultado);	
+	}
+	else if(resultado<3000)
+	{
+		alert("tenemos los deditos duros???: "+resultado);
+	}
+	else
+	{
+		alert("Te quedastes dormido???: "+resultado);
+	}
 
-	
-}//FIN DE LA FUNCIÓN fin
+}//fin function fin

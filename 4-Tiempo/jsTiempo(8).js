@@ -1,23 +1,27 @@
-var miTemporizador ;
-var contador=0;
+/*
+Enunciado:
+Luego de presionar el botón 'Iniciar',se dispará un temporizador de una funcion que haga visible el botón "el oculto" y que tome el tiempo de inicio.
+El botón "el oculto" ejecutará la function "ContarMilisegundos" que tome el tiempo de finalización calcule la diferencia y muestre el resultado.
+*/
+
+
 var tiempoInicio;
 var tiempoFinal;
 
-function inicio() {
-	
+function inicio()
+{
 	document.getElementById("secreto").style.visibility="visible"; 
 	tiempoInicio = new Date();
 	tiempoInicio = tiempoInicio.getTime();
 	alert(tiempoInicio);
-	
-}//FIN DE LA FUNCIÓN inicio
+}//fin function inicio
 
 
-function ContarMilisegundos() {
+function ContarMilisegundos()
+{
 	tiempoFinal= new Date();
 	tiempoFinal = tiempoFinal.getTime();
 	resultado = tiempoFinal - tiempoInicio;
 	resultado = parseFloat(resultado) / 1000;
 	alert("su tiempo fue: " + resultado + "segundos");
-
-}//FIN DE LA FUNCIÓN fin
+}//fin function fin

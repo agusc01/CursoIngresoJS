@@ -1,25 +1,17 @@
-var miTemporizador ;
-var contador=0;
-var tiempoInicio;
-var tiempoFinal;
+/*
+Enunciado:
+Luego de presiona el botón 'Iniciar',se dispará un temporizador de una funcion que haga visible el botón "el oculto".
+*/
 
-function inicio() {
+var miTemporizador;
 
+function inicio()
+{
 	alert("function inicio.");
 	miTemporizador = setTimeout(SegundosEnElAire, 3000);
-	
-}//FIN DE LA FUNCIÓN inicio
+}//fin function inicio
 
-function SegundosEnElAire() {
-
+function SegundosEnElAire()
+{
 	document.getElementById("secreto").style.visibility="visible"; 
-
-}//FIN DE LA FUNCIÓN SegundosEnElAire
-
-
-// La función fin() es innecesaría, porque se utiliza cuando esta setInterval, no se utiliza cuando usas setTimeout
-/* function fin() {
-	tiempoFinal= new Date();
-	tiempoFinal=tiempoFinal.getTime();
-	alert(tiempoFinal-tiempoInicio);
-}//FIN DE LA FUNCIÓN fin */
+}//fin function SegundosEnElAire

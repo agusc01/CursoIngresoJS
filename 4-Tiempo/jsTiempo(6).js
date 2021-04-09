@@ -1,23 +1,20 @@
-var miTemporizador ;
-var contador=0;
+/*
+Enunciado:
+Luego de presiona el botón 'Iniciar', se ocultara el botón "el oculto". Después de 3(tres) segundo será visible nuevamente.
+*/
 
-function inicio() {
+var miTemporizador;
+
+function inicio()
+{
 	document.getElementById("secreto").style.visibility="hidden";
 	alert("function inicio.");
 	miTemporizador = setTimeout(SegundosEnElAire, 3000);
 	
-}//FIN DE LA FUNCIÓN inicio
+}//fin function inicio
 
-function SegundosEnElAire() {
-
+function SegundosEnElAire()
+{
 	document.getElementById("secreto").style.visibility="visible"; 
     alert("Bienvenido a la UTN FRA");
-   
-}//FIN DE LA FUNCIÓN SegundosEnElAire
-
-// La función fin() es innecesaría, porque se utiliza cuando esta setInterval, no se utiliza cuando usas setTimeout
-/* function fin() {
-	alert("function fin.");
-	clearTimeout(miIntervalo);
-
-}//FIN DE LA FUNCIÓN fin */
+}//fin function SegundosEnElAire
