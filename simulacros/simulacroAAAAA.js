@@ -114,7 +114,7 @@ function mostrar()
         cantidadDeHabitantes=parseInt(cantidadDeHabitantes);
         while(isNaN(cantidadDeHabitantes)==true || cantidadDeHabitantes<1000000 || cantidadDeHabitantes>7000000000)
         {
-            cantidadDeHabitantes=prompt("Error, ingrese cantidad de habitantes: ");
+            cantidadDeHabitantes=prompt("Error, ingrese cantidad de habitantes: (entre 1000000 a 7000000000 habitantes");
             cantidadDeHabitantes=parseInt(cantidadDeHabitantes);
         }
 

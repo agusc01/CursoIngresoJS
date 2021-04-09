@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <button onclick="mostrar()">mostrar</button>
-        
-<script>
-
 function mostrar()
 {
     
@@ -144,7 +131,7 @@ function mostrar()
         
         edadIngresada=prompt("ingrese su edad (18 o más)  ");
         edadIngresada=parseInt(edadIngresada);
-        while(isNaN(edadIngresada)==true || edadIngresada<18)
+        while(isNaN(edadIngresada)==true || edadIngresada<18 || edadIngresada>110)
         {
             edadIngresada=prompt("Error, ingrese su edad (18 o más) ");
             edadIngresada=parseInt(edadIngresada);
@@ -337,11 +324,4 @@ function mostrar()
 
     */
 
-
-
-
 }
-</script>
-
-    </body>
-</html>

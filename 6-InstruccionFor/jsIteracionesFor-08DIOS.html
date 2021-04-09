@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+
+		<button onclick="mostrar()">clickme</button>
+	<body>
+    	<script>
+
+			/*
+			Alumno: Cacciatori, Agustín
+			8)
+			Enunciado:
+			al presionar el botón pedir un número. Informar si el numero es PRIMO o no.
+			*/
+
+			function mostrar()
+			{
+				/*
+				var banderaEsPrimo; // parto de la idea que el número sera primo, soy optimista ;)
+				var cantidadDivisores;
+				var contador;
+				var mensaje;
+				
+				banderaEsPrimo=true;
+				cantidadDivisores=0;
+				
+				numeroIngresado=prompt("Ingrese un número mayor a 0");
+				numeroIngresado=parseInt(numeroIngresado);
+				while(isNaN(numeroIngresado)==true || numeroIngresado<1)
+				{
+					numeroIngresado=prompt("Error, ingrese un número mayor a 0");
+					numeroIngresado=parseInt(numeroIngresado);	
+				}
+				
+				// numeroIngresado++;
+				for(contador=1;contador<numeroIngresado;contador++)
+				{
+					
+					if(numeroIngresado%contador==0)
+					{
+						console.log(contador);
+						cantidadDivisores++;
+					}
+					if(cantidadDivisores>1)
+					{
+						banderaEsPrimo=false;
+						break;
+					}
+				}
+				
+				
+				if(banderaEsPrimo==true)
+				{
+					mensaje="El número ingresado "+numeroIngresado+" es primo";
+				}
+				else 
+				{
+					mensaje="El número ingresado "+numeroIngresado+" NO es primo";
+				}
+				
+				console.log(mensaje);
+				console.log(cantidadDivisores);
+				alert(mensaje)
+				*/
+				
+				/*
+				var numeroIngresado;
+				var numeroAnterior;
+				var mensaje;
+				var limite;
+				
+				
+				numeroIngresado=prompt("Ingrese un número mayor a 0");
+				numeroIngresado=parseInt(numeroIngresado);
+				while(isNaN(numeroIngresado)==true || numeroIngresado<1)
+				{
+					numeroIngresado=prompt("Error, ingrese un número mayor a 0");
+					numeroIngresado=parseInt(numeroIngresado);	
+				}
+				
+				//solo si es impar, NO existe números primos pares... EXCEPTO el 2 
+				if(numeroIngresado%2==1)
+				{
+					// limite=numeroIngresado/2;
+					limite=Math.sqrt(numeroIngresado);
+					for(numeroAnterior=2;numeroAnterior<limite;numeroAnterior++)
+					{
+						if(numeroIngresado%numeroAnterior==0)
+						{
+							break;
+						}
+						
+					}
+				}
+				else
+				{
+					if(numeroIngresado==2)//es primo
+					{
+						numeroAnterior=3;
+						limite=2;
+					}
+					//no es primo
+					numeroAnterior=2;
+					limite=3;
+				}
+				
+				
+				if(numeroAnterior>limite || numeroIngresado==2)
+				{
+					mensaje=numeroIngresado+" primo";
+				}
+				else 
+				{
+					mensaje=numeroIngresado+" no primo";
+				}
+				
+				console.log(mensaje);
+				
+				*/
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				var numeroIngresado;
+				var numeroAnterior;
+				var limite;
+				var minimoNumero;
+				
+				minimoNumero=0;
+				
+				numeroIngresado=prompt("Ingrese un número mayor a 0");
+				numeroIngresado=parseInt(numeroIngresado);
+				while(isNaN(numeroIngresado)==true || numeroIngresado<1)
+				{
+					numeroIngresado=prompt("Error, ingrese un número mayor a 0");
+					numeroIngresado=parseInt(numeroIngresado);	
+				}
+				
+				//minimoNumero esta por si quieren buscar entre dos números y no 
+				//entre el número ingresado y el 1
+				//nota: si yo se que minimoNumero>2 se podría sacar 1 if y 1 else
+				for(;numeroIngresado>minimoNumero;numeroIngresado--)
+				{
+					
+					
+					//solo si es impar, NO existe números primos pares... EXCEPTO el 2 
+					if(numeroIngresado%2==1)
+					{
+						// limite=numeroIngresado/2;
+						limite=Math.sqrt(numeroIngresado);
+						for(numeroAnterior=2;numeroAnterior<limite;numeroAnterior++)
+						{
+							if(numeroIngresado%numeroAnterior==0)
+							{
+								break;
+							}
+						}
+					}
+					else
+					{
+						if(numeroIngresado==2)//es primo
+						{
+							numeroAnterior=3;
+							limite=2;
+						}
+						else //no es primo, porque es número par y no es 2
+						{
+							numeroAnterior=2;
+							limite=3;
+						}
+					}
+					
+					if(numeroAnterior>limite)
+					{
+						console.log(numeroIngresado);//esto imprime el número primo
+					}
+					
+				}
+				
+				
+				
+				
+				
+			}//FIN DE LA FUNCIÓN
+
+    	</script>
+	</body>
+</html>
